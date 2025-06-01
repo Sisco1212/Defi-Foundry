@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+:root {
+  --text-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #000;
+}
+
+.header {
+   background: url(../Imgs/verticl-lines.png) no-repeat;
+}
+
+header {
+    padding: 2em 3em;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header nav a.logo {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a.logo {
+    color: var(--text-color);
+    text-decoration: none;
+
+}
+
+header nav a.logo .logo-text h3 {
+font-family: "Jersey 25", sans-serif;
+font-size: 28px;
+font-weight: 500;
+line-height: 24px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 50px;
+}
+
+header nav ul li a{
+    color: var(--text-color);
+    font-size:14px;
+    font-weight: Medium;
+}
+
+header nav a.joinus {
+    background: #fff;
+    width: 120px;
+    height: 42px;
+    text-align: center;
+    padding-top: .8em;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+section.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5.5em;
+    background: url(../Imgs/Ellipse-hero.png) no-repeat center -100px;
+}
+
+section.hero input{
+padding-left: 32px;
+background: url(../Imgs/serch.png) no-repeat 8.5px 5.5px ;
+background-size: 16px;
+width: 187px;
+height: 30px;
+border-radius: 50px;
+background-color: #383a39;
+color: var(--text-color);
+border: 1px solid #fff;
+font-size: 12px;
+outline:none;
+font-weight: Medium;
+}
+
+section.hero input::placeholder {
+    color: #fff;
+}
+
+section.hero h2 {
+    color: var(--text-color);
+    margin-top: .7em;
+    font-size: 55px;
+    width: 70%;
+}
+
+section.hero p {
+    color: var(--text-color);
+    margin-top: 1.8rem;
+    font-size: 18px;
+    font-weight: 300;
+    width: 65%;
+}
+
+section.hero a.apply {
+ margin-top: 3.8em;
+ width: 210px;
+ height: 49px;
+ text-align: center;
+ padding-top: 1em;
+ border-radius: 30px;
+ font-weight: bold;
+ font-size: 15px;
+ background: #fff;
+ color: #000;
+ text-decoration: none;
+}
+
+section.hero img.curves {
+/* position: relative; */
+margin-top: -200px;
+}
+
+section.hero .sponsors {
+    margin-top: 8em;
+    /* width: 100%; */
+}
+
+section.hero .sponsors p{
+ text-align: center;
+ margin:auto;
+ font-size: 20px;
+ font-weight: 400;
+ margin-bottom: 1.3em;
+}
+
+section.about {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin-top: 5em; */
+    position: relative;
+    padding: 8em 0;
+    background: url("../Imgs/Ellipse\ 13.png") no-repeat center;
+    /* background-size: ; */
+    /* object-fit: fit; */
+}
+
+section.about h2{
+ color: #fff;
+ text-align: center;
+ font-size: 36px;
+ font-weight: 600;
+ margin-bottom: 1em;
+}
+
+section.about p{
+ color: #cdcdcd;
+ text-align: center;
+ font-size: 18px;
+ font-weight: 300;
+ width: 45%;
+}
+
+section.about img {
+    position: absolute;
+    margin: 0;
+    /* width: 400px; */
+}
+
+section.about img.top-left {
+    top: -95px;
+    left: -130px;
+}
+
+section.about img.top-right {
+    top: -95px;
+    right: -75px;
+}
+
+section.about img.bottom-right {
+    /* top: 2px; */
+    right: -30px;
+}
+
+section.about img.bottom-left {
+    /* top: -18px; */
+    left: -130px;
+}
