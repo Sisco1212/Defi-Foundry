@@ -162,6 +162,7 @@ section.about {
     background: url("../Imgs/Ellipse\ 13.png") no-repeat center;
     /* background-size: ; */
     /* object-fit: fit; */
+    position: relative;
 }
 
 section.about h2{
@@ -373,4 +374,285 @@ section#ecosystem span p {
     /* margin-top: 1em; */
     width: 28%;
     margin:1em auto;
+}
+
+section.why  {
+    width: 100%;
+    margin: auto ;
+    padding: 7em 7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    background: url("../Imgs/Ellipse\ Why.png") no-repeat;
+    /* background-position:; */
+    /* background-size: 800px; */
+}
+
+section.why .left h3 {
+    color: var(--text-color);
+    font-size: 36px;
+    margin-bottom: 1em;
+    width: 50%;
+}
+
+section.why .left p {
+    color: #cdcdcd;
+    margin-bottom: 3.8rem;
+    font-size: 18px;
+}
+
+section.why .left a.get-started{
+ /* margin-top: 3.8em; */
+ /* width: 210px;
+ height: 50px; */
+ text-align: center;
+ padding: 1em 3.5em;
+ border-radius: 30px;
+ font-weight: bold;
+ font-size: 15px;
+ background: #fff;
+ color: #000;
+ text-decoration: none;
+}
+
+section.why .right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+section.why .right div {
+     background: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(185, 255, 234, 0.5);
+    border-radius: 24px;
+    box-shadow: -0 -0 -20 rgba(255, 255, 255, 0.2);
+    padding: 2em 1.5em;
+    height: 100%;
+}
+
+section.why .right div img {
+    margin-bottom: 1em;
+}
+
+section.why .right h4 {
+    color: var(--text-color);
+    font-size: 20px;
+    margin-bottom: .5em;
+}
+
+section.why .right p {
+    color:#cdcdcd;
+    font-size: 14px;
+}
+
+section.testimonials {
+    margin-top: 3.5em;
+    background: url("../Imgs/Ellipse\ 66.png") center 0 no-repeat;
+    padding-top: 3.8em;
+}
+
+section.testimonials h2 {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 36px;
+}
+
+section.testimonials p.title {
+    text-align: center;
+    color: #cdcdcd;
+    font-size: 18px;
+    width: 33%;
+    margin:1em auto;
+}
+
+section.testimonials .cards {
+   display: flex;
+   justify-content: center;
+   margin: 3.5em auto;
+   gap: 20px;
+   align-items: center;
+   width: 85%;
+}
+
+section.testimonials .cards div.card1,
+section.testimonials .cards div.card2, 
+section.testimonials .cards div.card3,
+section.testimonials .cards div.card4
+{
+    background: url("../Imgs/Ellipse\ 61.png");
+    border-radius: 24px;
+    padding: 1.5em;
+}
+
+section.testimonials .cards p {
+   color: #cdcdcd;
+   font-size: 12px;
+}
+
+section.testimonials .cards .card-footer {
+   display: flex;
+   justify-content: start;
+   gap: 8px;
+   align-items: center;
+   margin-top: 1.5em;
+}
+
+section.testimonials .cards .card-footer h5{
+   color: var(--text-color);
+}
+
+section.question {
+ margin:auto;
+ padding: 9.8em 0;
+ width: 43%;
+ background: url("../Imgs/Group\ 42.png") center no-repeat;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+}
+
+section.question h1 {
+ color: var(--text-color);
+ font-size: 48px;
+ text-align: center;
+ margin-top: 1em;
+}
+
+section.question p {
+ color: #cdcdcd;
+ font-size: 18px;
+ margin:1em auto;
+ text-align: center;
+ width: 95%;
+}
+
+/* section.question a {
+    margin:auto;
+} */
+
+    section.question a button{
+ margin-top: 1em;
+ width: 200px;
+ height: 49px;
+ text-align: center;
+ /* padding-top: .5em; */
+ border-radius: 30px;
+ font-weight: bold;
+ font-size: 15px;
+ background: #fff;
+ color: #000;
+ text-decoration: none;
+ outline: none;
+ border: none;
+}
+
+section.question img {
+ position:absolute;
+}
+
+section.question img.top-left {
+    top: -95px;
+    right: 95%;
+}
+
+section.question img.top-right {
+    top: -95px;
+    left: 95%;
+}
+
+section.question img.bottom-right {
+    top: 15%;
+    left: 80%;
+}
+
+section.question img.bottom-left {
+    top: 15%;
+    right: 80%;
+}
+
+footer {
+    margin-top: 2em;
+    background: url("../Imgs/Ellipse\ 66.png") center 0 no-repeat;
+    padding-top: 3.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer div.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+footer p.title {
+    color: #cdcdcd;
+    font-size: 20px;
+    width: 20%;
+    text-align: center;
+    margin:auto;
+}
+
+footer ul {
+ margin-top: 3.5em;
+ display: flex;
+ justify-content: space-around;
+ width: 50%;
+ align-items: center;
+}
+
+footer ul li{
+ font-size: 14px;
+ color: #cdcdcd;
+ padding-left: 9px;
+ font-weight: 300;
+}
+
+footer ul li.benefits{
+ list-style-type: none;
+}
+
+footer div.footer-bottom  {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    margin-top: 3.8em;
+    border-top: 1px solid#555;
+    padding-top: 2em;
+}
+
+footer div.footer-bottom div.center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+footer div.footer-bottom div.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+footer div.footer-bottom p {
+    color: #cdcdcd;
+    font-size: 14px;
 }
