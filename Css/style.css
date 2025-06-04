@@ -21,14 +21,26 @@ body {
 }
 
 header {
-    padding: 2em 3em;
+    overflow: hidden;
+    /* margin-bottom: 5em; */
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* height: 50px; */
+    position: fixed;
+    width: 100%;
+    padding: 2em 3em;
+    z-index: 999;
+    transition: all .5s;
+}
 
+.static {
+    padding: 1em 2em;
+    background: #000;
+    box-shadow: 2px 2px 20px;
 }
 
 header nav a.logo {
@@ -36,12 +48,9 @@ header nav a.logo {
     gap: 7px;
     justify-content: center;
     align-items: center;
-}
-
-header nav a.logo {
     color: var(--text-color);
     text-decoration: none;
-
+    animation-delay: 0.5s;
 }
 
 header nav a.logo .logo-text h3 {
@@ -51,26 +60,81 @@ font-weight: 500;
 line-height: 24px;
 }
 
-header nav ul {
+header nav ul.nav-links {
     display: flex;
     gap: 50px;
+    animation-delay: 0.7s;
 }
 
-header nav ul li a{
+header nav ul.nav-links li{
+    list-style: none;
+}
+
+header nav ul.nav-links li a{
     color: var(--text-color);
     font-size:14px;
     font-weight: Medium;
+    text-decoration: none;
+    transition: .5s;
 }
+
+header nav ul li a::after {
+ content: '';
+ display: block;
+ background: rgba(185, 255, 234, 0.5);
+ height: 3px;
+ border-radius: 2px;
+ transform: scaleX(0);
+ transform-origin: left;
+ transition: transform 0.3s;
+}
+
+header nav ul li a:hover {
+ color: rgba(185, 255, 234, 0.5); 
+}
+header nav ul li a:hover::after {
+ color: rgba(185, 255, 234, 0.5); 
+ transform-origin: right;
+ transform: scaleX(1);
+}
+
 
 header nav a.joinus {
     background: #fff;
     width: 120px;
     height: 42px;
     text-align: center;
+    /* padding: .8em 2em; */
     padding-top: .8em;
     border-radius: 30px;
     font-weight: bold;
     font-size: 15px;
+    text-decoration: none;
+    color: #000;
+    transition: .5s;
+    animation-delay: .9s;
+}
+
+header nav a.joinus:hover {
+    background:rgba(185, 255, 234, 0.5);
+    font-size: 15px;
+    color: #000;
+}
+
+ a.logo,
+ ul.nav-links,
+a.joinus
+{
+    opacity: 0;
+    transform: translateX(2rem);
+  animation: returnToOrigin 0.7s ease-out forwards;
+}
+
+@keyframes returnToOrigin {
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
 }
 
 section.hero {
@@ -81,7 +145,7 @@ section.hero {
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 5.5em;
+    padding-top: 12.5em;
     background: url(../Imgs/Ellipse-hero.png) no-repeat center -100px;
 }
 
@@ -98,17 +162,20 @@ border: 1px solid #fff;
 font-size: 12px;
 outline:none;
 font-weight: Medium;
+transform: translateY(2rem);
+animation-delay: 1s;
 }
 
 section.hero input::placeholder {
     color: #fff;
 }
-
 section.hero h2 {
     color: var(--text-color);
     margin-top: .7em;
     font-size: 55px;
     width: 70%;
+    transform: translateY(2rem);
+    animation-delay: 1.2s;
 }
 
 section.hero p {
@@ -117,6 +184,8 @@ section.hero p {
     font-size: 18px;
     font-weight: 300;
     width: 65%;
+    transform: translateY(2rem);
+    animation-delay: 1.4s;
 }
 
 section.hero a.apply {
@@ -131,16 +200,41 @@ section.hero a.apply {
  background: #fff;
  color: #000;
  text-decoration: none;
+ transition: .5s;
+ z-index: 20;
+ opacity: 0;
+ transform: translateY(-2rem);
+ animation-delay: 1.7s;
+}
+
+section.hero a.apply:hover {
+    background:rgba(185, 255, 234, 0.5);
+    font-size: 15px;
+    color: #000;
+    /* width: 200px;
+    height: 45px; */
 }
 
 section.hero img.curves {
-/* position: relative; */
 margin-top: -200px;
+z-index: -2;
+transform: scale(1.1);
+opacity: 0;
+animation-delay: 1.8s;
+/* width: 100%; */
+}
+
+ input,
+ h2,
+ p,
+ a.apply,
+ img.curves {
+    opacity: 0;
+    animation: returnToOrigin 0.7s ease-out forwards;
 }
 
 section.hero .sponsors {
     margin-top: 8em;
-    /* width: 100%; */
 }
 
 section.hero .sponsors p{
@@ -156,12 +250,9 @@ section.about {
     justify-self: center;
     align-items: center;
     flex-direction: column;
-    /* margin-top: 5em; */
     position: relative;
     padding: 8em 0;
     background: url("../Imgs/Ellipse\ 13.png") no-repeat center;
-    /* background-size: ; */
-    /* object-fit: fit; */
     position: relative;
 }
 
@@ -171,7 +262,21 @@ section.about h2{
  font-size: 36px;
  font-weight: 600;
  margin-bottom: 1em;
+ opacity: 0;
+ transition: 1s;
+ transform: translateY(200px);
 }
+
+ /* h2[data-scroll="in"] {
+    opacity: 1;
+    transition-delay: 1s;
+    transform: translateY(0);
+}
+ img[data-scroll="in"] {
+    opacity: 1;
+    transition-delay: 1s;
+    transform: translateY(0);
+} */
 
 section.about p{
  color: #cdcdcd;
@@ -179,12 +284,18 @@ section.about p{
  font-size: 18px;
  font-weight: 300;
  width: 45%;
+opacity: 0;
+ transition: 1s;
+}
+
+section.about p[data-scroll="in"] {
+ opacity: 1;
+ transition-delay: 1s;
 }
 
 section.about img {
     position: absolute;
     margin: 0;
-    /* width: 400px; */
 }
 
 section.about img.top-left {
@@ -198,22 +309,16 @@ section.about img.top-right {
 }
 
 section.about img.bottom-right {
-    /* top: 2px; */
     right: -30px;
 }
 
 section.about img.bottom-left {
-    /* top: -18px; */
     left: -130px;
 }
 
 section#services {
     color: var(--text-color);
     margin-top: 1em;
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
 section#services h2 {
@@ -233,21 +338,14 @@ section#services p.title {
 
 section#services .service {
     display: grid;
-    /* flex-wrap: wrap; */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* gap: 20px; */
-    /* grid-template-rows: 1fr; */
-    /* justify-content: center; */
-    /* align-items: center !important;     */
     gap: 30px;
     padding: 0 90px;
-    /* width: 80%; */
 }
 
 section#services .service .service1
 {
     grid-column: span 4 ;
-    /* grid-row: 1 / 5; */
 } 
 
 section#services .service .service1 span img
@@ -266,32 +364,49 @@ section#services .service .service3 span img
 section#services .service .service2
 {
     grid-column:  span 3;
-    /* grid-row: 1 / 2; */
+    position: relative;
 } 
+
+/* section#services .service .service2 img.hover-img
+{
+position:absolute;
+transform: rotateY(180deg);
+bottom: 0;
+right: 0;
+border-bottom-left-radius: 24px;
+}  */
 
 section#services .service .service3
 {
     grid-column: span 3;
-    /* grid-row: 2 / 3; */
 } 
 
 section#services .service .service4
 {
     grid-column: span 4;
-    /* grid-row: 2 / 3; */
 } 
 
 section#services .service div {
     background: rgba(10, 10, 10, 0.7);
     border: 1px solid rgba(185, 255, 234, 0.5);
     border-radius: 24px;
-    box-shadow: -0 -0 -20 rgba(255, 255, 255, 0.2);
+    box-shadow: inset 3px 3px 20px rgba(255, 255, 255, 0.2);
     padding: 2em;
     height: 394px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center; */
+    position: relative;
+}
+section#services .service div:hover img.hover-img{
+ opacity: 1;
+}
+
+section#services .service div img.hover-img{
+position:absolute;
+transform: rotateY(180deg);
+bottom: 0;
+right: 0;
+border-bottom-left-radius: 24px;
+opacity: 0;
+    transition: .5s;
 }
 
 section#services .service div .img-con {
@@ -429,9 +544,81 @@ section.why .right div {
      background: rgba(10, 10, 10, 0.7);
     border: 1px solid rgba(185, 255, 234, 0.5);
     border-radius: 24px;
-    box-shadow: -0 -0 -20 rgba(255, 255, 255, 0.2);
+    box-shadow: inset 3px 3px 20px rgba(255, 255, 255, 0.2);
     padding: 2em 1.5em;
     height: 100%;
+}
+
+section.why .right div.card1 {
+ background: url("../Imgs/Ellipse\ 81.png") no-repeat right;
+ position: relative;
+}
+
+section.why .right div.card1 img.img-hover{
+position: absolute;
+top: 0;
+border-bottom-right-radius: 24px;
+right: 0;
+opacity: 0;
+transition: .5s;
+}
+
+section.why .right div.card1:hover img.img-hover{
+opacity: 1;
+}
+
+section.why .right div.card2 {
+    background: url("../Imgs/Ellipse\ 81\ \(1\).png") no-repeat;
+    position: relative;
+}
+
+section.why .right div.card2 img.img-hover{
+    position: absolute;
+    top: 0;
+    border-bottom-left-radius: 24px;
+    left: 0;
+    opacity: 0;
+    transition: .5s;
+}
+
+section.why .right div.card2:hover img.img-hover{
+opacity: 1;
+}
+
+section.why .right div.card3 {
+    background: url("../Imgs/Ellipse\ 81\ \(2\).png") no-repeat right;
+    position: relative;
+}
+
+section.why .right div.card3 img.img-hover{
+    position: absolute;
+    top: 0;
+    border-top-right-radius: 24px;
+    right: 0;
+    opacity: 0;
+    transition: .5s;
+}
+
+section.why .right div.card3:hover img.img-hover{
+opacity: 1;
+}
+
+section.why .right div.card4 {
+    background: url("../Imgs/Ellipse\ 81\ \(3\).png") no-repeat;
+    position: relative;
+}
+
+section.why .right div.card4 img.img-hover{
+    position: absolute;
+    top: 0;
+    border-top-left-radius: 24px;
+    left: 0;
+    opacity: 0;
+    transition: .5s;
+}
+
+section.why .right div.card4:hover img.img-hover{
+opacity: 1;
 }
 
 section.why .right div img {
@@ -469,7 +656,12 @@ section.testimonials p.title {
     margin:1em auto;
 }
 
-section.testimonials .cards {
+.swiper {
+  width: 100%;
+  /* height: 300px; */
+}
+
+section.testimonials .swiper .swiper-wrapper {
    display: flex;
    justify-content: center;
    margin: 3.5em auto;
@@ -478,22 +670,22 @@ section.testimonials .cards {
    width: 85%;
 }
 
-section.testimonials .cards div.card1,
-section.testimonials .cards div.card2, 
-section.testimonials .cards div.card3,
-section.testimonials .cards div.card4
+section.testimonials .swiper .swiper-wrapper div.card1,
+section.testimonials .swiper .swiper-wrapper div.card2, 
+section.testimonials .swiper .swiper-wrapper div.card3,
+section.testimonials .swiper .swiper-wrapper div.card4
 {
     background: url("../Imgs/Ellipse\ 61.png");
     border-radius: 24px;
     padding: 1.5em;
 }
 
-section.testimonials .cards p {
+section.testimonials .swiper .swiper-wrapper p {
    color: #cdcdcd;
    font-size: 12px;
 }
 
-section.testimonials .cards .card-footer {
+section.testimonials .swiper .swiper-wrapper .card-footer {
    display: flex;
    justify-content: start;
    gap: 8px;
@@ -501,7 +693,7 @@ section.testimonials .cards .card-footer {
    margin-top: 1.5em;
 }
 
-section.testimonials .cards .card-footer h5{
+section.testimonials .swiper .swiper-wrapper .card-footer h5{
    color: var(--text-color);
 }
 
@@ -577,7 +769,7 @@ section.question img.bottom-left {
 }
 
 footer {
-    margin-top: 2em;
+    margin-top: 8em;
     background: url("../Imgs/Ellipse\ 66.png") center 0 no-repeat;
     padding-top: 3.8em;
     display: flex;
