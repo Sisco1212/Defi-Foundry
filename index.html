@@ -32,8 +32,22 @@
     <li><a href="#" class="services">Services</a></li>
     <li><a href="#" class="contact">Contact</a></li>
 </ul>
+
 <a href="#" class="joinus"> Join Us</a>
+
+<div class="mobile-nav">
+  <span></span>
+</div>
 </nav>
+
+<div class="mobile-menu">
+  <ul class="links">
+    <li><a href="index.html" class="">Home</a></li>
+    <li><a href="#" class="about">About Us</a></li>
+    <li><a href="#" class="services">Services</a></li>
+    <li><a href="#" class="contact">Contact</a></li>
+  </ul>
+</div>
 </header>
 
 <section class="hero">
@@ -47,12 +61,12 @@ Fueling the next wave of Web3 innovation
 Empowering early-stage crypto startups with market-making, fundraising, and branding, backed by a thriving web3 community..
 </p>
 <a href="#" class="apply"> Apply as a Startup</a>
-<img src="../Imgs/curved-lines.png" class="curves" alt="">
+<img src="../Imgs/curves.png" class="curves" alt="">
+</section>
 <div class="sponsors">
 <p>Trusted by Leading Web3 Startups and Investors</p>
 <img src="../Imgs/sponsors.png" alt="">
 </div>
-</section>
 </div>
 
 <section class="about">
@@ -106,7 +120,7 @@ Empowering early-stage crypto startups with market-making, fundraising, and bran
 
 <section id="ecosystem">
 <!-- <img src="Imgs/ecosystem.png" alt=""> -->
-<div class="ecosystem1">
+<!-- <div class="ecosystem1">
 <img src="Imgs/ecosystem1.png" alt="">
 <p>Early-stage crypto projects</p>
 </div>
@@ -117,7 +131,7 @@ Empowering early-stage crypto startups with market-making, fundraising, and bran
 <div class="ecosystem3">
 <img src="Imgs/ecosystem3.png" alt="">
 <p>Builders & Creatives</p>
-</div>
+</div> -->
 <span>
 <h3>The Ecosystem We Serve</h3>
 <p>We partner with early-stage crypto teams, DAOs, and founders ready to turn bold ideas into real-world impact.</p>
@@ -296,48 +310,52 @@ else
 }
 });
 
-    new Swiper('.swiper', {
+let menuToggle = document.querySelector(".mobile-nav");
+let nav = document.querySelector(".mobile-menu");
+menuToggle.onclick = function() {
+  menuToggle.classList.toggle("active");
+  nav.classList.toggle("show");
+}
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+//     new Swiper('.swiper', {
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
 
-  spaceBetween: 20,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
 
-  breakpoints: {
-    0: {
-        slidesPerView: 1,
-        spaceBetween: 10
-    },
-    480: {
-        slidesPerView: 1.5,
-        spaceBetween: 10
-    },
+//   spaceBetween: 20,
 
-    768: {
-        slidesPerView: 1.5,
-        spaceBetween: 10
-    },
+//   breakpoints: {
+//     0: {
+//         slidesPerView: 1,
+//         spaceBetween: 10
+//     },
+//     480: {
+//         slidesPerView: 1.5,
+//         spaceBetween: 10
+//     },
+
+//     768: {
+//         slidesPerView: 1.5,
+//         spaceBetween: 10
+//     },
     
-    1024: {
-        slidesPerView: 2,
-        spaceBetween: 20
-    }
-  },
+//     1024: {
+//         slidesPerView: 2,
+//         spaceBetween: 20
+//     }
+//   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+// });
 
 </script>
 

@@ -18,11 +18,12 @@ body {
 
 .header {
    background: url(../Imgs/verticl-lines.png) no-repeat;
+   /* min-width: 100%; */
 }
 
 header {
     overflow: hidden;
-    /* margin-bottom: 5em; */
+    margin-bottom: 0;
 }
 
 header nav {
@@ -78,7 +79,7 @@ header nav ul.nav-links li a{
     transition: .5s;
 }
 
-header nav ul li a::after {
+header nav ul.nav-links li a::after {
  content: '';
  display: block;
  background: rgba(185, 255, 234, 0.5);
@@ -89,10 +90,10 @@ header nav ul li a::after {
  transition: transform 0.3s;
 }
 
-header nav ul li a:hover {
+header nav ul.nav-links li a:hover {
  color: rgba(185, 255, 234, 0.5); 
 }
-header nav ul li a:hover::after {
+header nav ul.nav-links li a:hover::after {
  color: rgba(185, 255, 234, 0.5); 
  transform-origin: right;
  transform: scaleX(1);
@@ -145,8 +146,8 @@ section.hero {
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 12.5em;
-    background: url(../Imgs/Ellipse-hero.png) no-repeat center -100px;
+    padding-top: 8em;
+    background: url(../Imgs/Ellipse-hero.png) no-repeat center -10px;
 }
 
 section.hero input{
@@ -190,10 +191,10 @@ section.hero p {
 
 section.hero a.apply {
  margin-top: 3.8em;
- width: 210px;
- height: 49px;
+ /* width: 210px;
+ height: 49px; */
  text-align: center;
- padding-top: 1em;
+ padding: 1em 2.5em;
  border-radius: 30px;
  font-weight: bold;
  font-size: 15px;
@@ -209,7 +210,7 @@ section.hero a.apply {
 
 section.hero a.apply:hover {
     background:rgba(185, 255, 234, 0.5);
-    font-size: 15px;
+    /* font-size: 15px; */
     color: #000;
     /* width: 200px;
     height: 45px; */
@@ -221,7 +222,7 @@ z-index: -2;
 transform: scale(1.1);
 opacity: 0;
 animation-delay: 1.8s;
-/* width: 100%; */
+width: 100%;
 }
 
  input,
@@ -233,11 +234,17 @@ animation-delay: 1.8s;
     animation: returnToOrigin 0.7s ease-out forwards;
 }
 
-section.hero .sponsors {
-    margin-top: 8em;
+.header .sponsors {
+    margin: 5em auto 0  auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
 }
 
-section.hero .sponsors p{
+.header .sponsors p{
+ color: #fff;
  text-align: center;
  margin:auto;
  font-size: 20px;
@@ -245,12 +252,15 @@ section.hero .sponsors p{
  margin-bottom: 1.3em;
 }
 
+.header .sponsors img{
+ width: 100%;
+}
+
 section.about {
     display: flex;
     justify-self: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
     padding: 8em 0;
     background: url("../Imgs/Ellipse\ 13.png") no-repeat center;
     position: relative;
@@ -284,13 +294,7 @@ section.about p{
  font-size: 18px;
  font-weight: 300;
  width: 45%;
-opacity: 0;
  transition: 1s;
-}
-
-section.about p[data-scroll="in"] {
- opacity: 1;
- transition-delay: 1s;
 }
 
 section.about img {
@@ -364,17 +368,13 @@ section#services .service .service3 span img
 section#services .service .service2
 {
     grid-column:  span 3;
-    position: relative;
+    /* position: relative; */
 } 
 
-/* section#services .service .service2 img.hover-img
-{
-position:absolute;
-transform: rotateY(180deg);
-bottom: 0;
-right: 0;
-border-bottom-left-radius: 24px;
-}  */
+section#services .service .service2 span img {
+    position: relative;
+    bottom: 0;
+}
 
 section#services .service .service3
 {
@@ -432,7 +432,7 @@ section#services .service div p {
 
 section#ecosystem {
     margin-top: 8em;
-    background: url("../Imgs/ecosystem.png") no-repeat;
+    background: url("../Imgs/eco.png") no-repeat;
     background-size: 100%;
     height: 110vh;
 }
@@ -471,7 +471,7 @@ section#ecosystem div.ecosystem3 {
 section#ecosystem span {
  /* margin-top: -300px; */
  position: relative;
- top: -100px;
+ top: 60%;
 }
 
 section#ecosystem span h3 {
@@ -518,9 +518,6 @@ section.why .left p {
 }
 
 section.why .left a.get-started{
- /* margin-top: 3.8em; */
- /* width: 210px;
- height: 50px; */
  text-align: center;
  padding: 1em 3.5em;
  border-radius: 30px;
@@ -529,6 +526,11 @@ section.why .left a.get-started{
  background: #fff;
  color: #000;
  text-decoration: none;
+ transition: .5s;
+}
+
+section.why .left a.get-started:hover{
+  background:rgba(185, 255, 234, 0.5);
 }
 
 section.why .right {
@@ -675,7 +677,7 @@ section.testimonials .swiper .swiper-wrapper div.card2,
 section.testimonials .swiper .swiper-wrapper div.card3,
 section.testimonials .swiper .swiper-wrapper div.card4
 {
-    background: url("../Imgs/Ellipse\ 61.png");
+    background: url("../Imgs/Ellipse\ 61.png") no-repeat;
     border-radius: 24px;
     padding: 1.5em;
 }
@@ -700,13 +702,14 @@ section.testimonials .swiper .swiper-wrapper .card-footer h5{
 section.question {
  margin:auto;
  padding: 9.8em 0;
- width: 43%;
+ width: 50%;
  background: url("../Imgs/Group\ 42.png") center no-repeat;
  display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center;
  position: relative;
+ background-size: cover;
 }
 
 section.question h1 {
@@ -730,10 +733,8 @@ section.question p {
 
     section.question a button{
  margin-top: 1em;
- width: 200px;
- height: 49px;
+  padding: 1em 3.8em;
  text-align: center;
- /* padding-top: .5em; */
  border-radius: 30px;
  font-weight: bold;
  font-size: 15px;
@@ -847,4 +848,763 @@ footer div.footer-bottom div.right {
 footer div.footer-bottom p {
     color: #cdcdcd;
     font-size: 14px;
+}
+
+
+/* ---------------------------
+   ---------------------------
+   --------------------------- */
+
+   /* Mobile view */
+
+   
+   .mobile-nav {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.5s;
+   }
+
+   .header .mobile-menu {
+    transform: scale(0);
+   }
+
+
+   @media only screen and (max-width:992px) {
+    
+    .mobile-nav span {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+        transition: 0.5s;
+    }
+    
+    .mobile-nav.active span {
+     transform: rotate(135deg);
+     transition-delay: 0.5s;
+    }
+    
+    .mobile-nav span::before {
+     content: '';
+     position: absolute;
+     width: 40px;
+     height: 3px;
+     background: #fff;
+     border-radius: 3px;
+     transition: 0.5s;
+    }
+    
+    .mobile-nav.active span::before {
+     transform: rotate(-270deg);
+     transition-delay: 1s;
+    }
+    
+    .mobile-nav span::after {
+     content: '';
+     position: absolute;
+     width: 25px;
+     height: 3px;
+     background: #fff;
+     border-radius: 3px;
+     transition: 0.5s;
+     transform: translateY(-12px);
+     box-shadow: 0 24px #fff;
+    }
+    
+    .mobile-nav.active span::after {
+     width: 40px;
+     transform: translateY(0px);
+     box-shadow: 0 0 #fff;
+    }
+    
+    header .mobile-menu {
+        position: fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        z-index: 900;
+        transform: scale(0);
+        transition: 0.5s;
+    }
+    
+    header .mobile-menu.show {
+        transform: scale(1);
+    }
+    
+    header .mobile-menu ul {
+     position: relative;
+    }
+    
+    header .mobile-menu ul li {
+     position: relative;
+     list-style-type: none;
+     text-align: center;
+     display: block;
+     margin: 3em auto;
+    }
+    
+    header .mobile-menu ul li a {
+     position: relative;
+     text-decoration: none;
+     font-size: 3rem;
+     color: #fff;
+     font-weight: 700;
+     text-transform: uppercase;
+     display: inline-block;
+    }
+    
+    header .mobile-menu ul li a:before {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 0;
+     width: 100%;
+     height: 8px;
+     background: rgba(185, 255, 234);
+     /* border-radius: 8px; */
+     transform: translateY(-50%) scaleX(0);
+     transform-origin: right;
+     transition: 0.5s transform;
+    }
+    
+    header .mobile-menu ul li a:hover:before {
+     transform: translateY(-50%) scaleX(1);
+     transform-origin: left;
+     transition: 0.5s transform;
+    }
+    .mobile-nav {
+        display: flex;
+    }
+
+    .header {
+   background: url("../Imgs/verticl-lines.png") no-repeat;
+   background-size:contain;
+   height: 100%;
+}
+
+header nav a.logo .logo-text h3 {
+font-size: 16px;
+}
+
+/* header nav  {
+ width: 80%;
+} */
+
+header nav a.logo img {
+ width: 40px;
+}
+
+    header nav ul.nav-links {
+         display: none;
+    }
+
+    header nav a.joinus {
+        display: none;
+    }
+
+
+section.hero {
+    width: 100%;
+    padding: 10em 2em 0 2em;
+    background: url(../Imgs/Ellipse-hero.png) no-repeat;
+    background-position: center 20px;
+    background-size: contain;
+}
+
+section.hero input{
+padding-left: 22px;
+background: url(../Imgs/serch.png) no-repeat 5px 5.5px ;
+background-size: 14px;
+width: 150px;
+height: 30px;
+font-size: 10px;
+}
+
+
+section.hero h2 {
+    margin-top: .5em;
+    font-size: 29px;
+    width: 50%;
+}
+
+section.hero p {
+    margin-top: 1rem;
+    font-size: 12px;
+    width: 50%;
+}
+
+section.hero a.apply {
+ margin-top: 2em;
+ font-size: 12px;
+}
+
+section.hero img.curves {
+    /* position: static; */
+margin-top: -120px;
+width: 80%;
+}
+
+.header .sponsors {
+    margin: 3em auto 0 auto;
+    width: 100%;
+}
+
+.header .sponsors p{
+ text-align: center;
+ margin:auto;
+ font-size: 12px;
+ font-weight: 400;
+ margin-bottom: 1.3em;
+}
+
+.header .sponsors img{
+ width: 90%;
+ margin:auto;
+}
+
+section.about {
+    padding: 3em 5.5em;
+    margin-top: 3em;
+    background: url("../Imgs/Ellipse\ 13.png") no-repeat center;
+    position: relative;
+    background-size: contain;
+}
+
+
+section.about h2{
+ font-size: 28px;
+}
+
+section.about p{
+ font-size: 14px;
+ width: 70%;
+}
+
+section.about img {
+    position: absolute;
+    margin: 0;
+    width: 80%;
+}
+
+section.about img.top-left {
+    top: -50px;
+    left: -90px;
+}
+
+section.about img.top-right {
+    top: -50px;
+    right: -90px;
+}
+
+section.about img.bottom-right {
+    top: 28%;
+    right: -100px;
+}
+
+section.about img.bottom-left {
+    top: 28%;
+    left: -100px;
+}
+
+section#services {
+    /* padding: auto 5em; */
+}
+
+section#services h2 {
+    font-size: 28px;
+}
+
+section#services p.title {
+    font-size: 14px;
+    width: 80%;
+    margin: auto auto 3.5em auto;
+}
+
+section#services .service {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+    padding: 0 5em;
+}
+
+section#services .service .service1
+{
+    grid-column: span 6;
+    width: 100%;
+    margin:auto;
+} 
+
+section#services .service .service1 span img
+{
+ position: relative;
+ bottom: -30px;
+ width: 100%;
+} 
+
+section#services .service .service3 span img
+{
+ position: relative;
+ bottom: 0;
+ margin-top: 1em;
+}
+
+section#services .service .service4 span img
+{
+height: 100%;
+width: 100%;
+}
+
+section#services .service .service2
+{
+    grid-column:  span 6;
+    position: relative;
+    padding-bottom: 0;
+} 
+
+section#services .service .service3
+{
+    grid-column: span 6;
+} 
+
+section#services .service .service4
+{
+    grid-column: span 6;
+} 
+
+section#services .service div {
+    height: 100%;
+}
+
+section#services .service div img{
+    /* width: 100%; */
+}
+
+section#services .service div h4 {
+ font-size: 20px;
+}
+
+section#services .service div p {
+ font-size: 14px;
+}
+
+section#ecosystem {
+    margin-top: 7em;
+    height: 35vh;
+}
+
+
+section#ecosystem div{
+ width: 100px;
+}
+
+section#ecosystem div img {
+ width: 55%;
+}
+
+section#ecosystem div p {
+ font-size: 12px;
+ margin-top: .5em;
+}
+
+section#ecosystem div.ecosystem1 {
+    left: 10px;
+    top: 170px;
+}
+
+section#ecosystem div.ecosystem2 {
+    left: 42%;
+    top: -70px;
+}
+
+section#ecosystem div.ecosystem3 {
+    left: 83%;
+    top: -10px;
+}
+
+section#ecosystem span h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+section#ecosystem span p {
+    font-size: 12px;
+    width: 40%;
+    margin:1em auto;
+}
+
+section.why  {
+    padding: 7em 5.5em;
+    flex-direction: column;
+    gap: 100px;
+}
+
+section.why .left {
+    display: flex;
+    margin:auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.why .left h3 {
+    font-size: 30px;
+    margin-bottom: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+section.why .left p {
+    margin-bottom: 3.8rem;
+    font-size: 14px;
+    text-align: center;
+    width: 80%;
+}
+
+section.why .right {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+section.why .right div.card1 img.img-hover{
+top: -33px;
+}
+
+section.why .right div.card2 img.img-hover{
+    top: -33px;
+}
+
+section.testimonials h2 {
+    font-size: 30px;
+}
+
+section.testimonials p.title {
+    font-size: 14px;
+    width: 55%;
+}
+
+.swiper {
+  width: 100%;
+  /* height: 300px; */
+}
+
+section.testimonials .swiper .swiper-wrapper {
+   flex-direction: column;
+   margin: 3.5em auto;
+   gap: 30px;
+   width: 80%;
+}
+
+section.testimonials .swiper .swiper-wrapper div.card1,
+section.testimonials .swiper .swiper-wrapper div.card2, 
+section.testimonials .swiper .swiper-wrapper div.card3,
+section.testimonials .swiper .swiper-wrapper div.card4
+{
+    background: url("../Imgs/Ellipse\ 61.png") repeat;
+    border-radius: 24px;
+    padding: 1.5em;
+}
+
+section.question {
+ margin:auto;
+ padding: 10em 2em;
+ width: 100%;
+ background-size: contain;
+ /* overflow-x: hidden; */
+ position: relative;
+}
+
+section.question h1 {
+ font-size: 30px;
+ width: 50%;
+}
+
+section.question p {
+ font-size: 12px;
+ width: 50%;
+}
+
+section.question img {
+ position:absolute;
+ width: 80%; 
+}
+
+section.question img.top-left {
+    top: -40%;
+    right: 35%;
+}
+
+section.question img.top-right {
+    top: -40%;
+    left: 35%;
+}
+
+section.question img.bottom-right {
+    top: 10%;
+    left: 35%;
+}
+
+section.question img.bottom-left {
+    top: 10%;
+    right: 35%;
+}
+
+footer p.title {
+    font-size: 14px;
+    width: 50%;
+}
+
+footer ul {
+ margin-top: 3.5em;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ gap: 15px;
+ width: 50%;
+ align-items: center;
+}
+
+footer ul li{
+ font-size: 14px;
+ list-style-type: none;
+ font-weight: 600;
+}
+
+footer div.footer-bottom  {
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+}
+
+footer div.footer-bottom div.center {
+    gap: 10px;
+}
+
+@media only screen and (min-height: 1024px) {
+  
+   section.about img {
+    position: absolute;
+    margin: 0;
+    width: 70%;
+}
+
+    section.about img.top-left {
+    top: -250px;
+    left: -150px;
+}
+
+section.about img.top-right {
+    top: -250px;
+    right: -150px;
+}
+
+section.about img.bottom-right {
+    top: -50px;
+    right: -130px;
+}
+
+section.about img.bottom-left {
+    top: -50px;
+    left: -130px;
+}
+}
+
+}
+
+/* @media only screen and (max-height: 1400px) {
+  
+   section.about img {
+    position: absolute;
+    margin: 0;
+    width: 70%;
+}
+
+    section.about img.top-left {
+    top: -280px;
+    left: -150px;
+}
+
+section.about img.top-right {
+    top: -250px;
+    right: -150px;
+}
+
+section.about img.bottom-right {
+    top: -50px;
+    right: -130px;
+}
+
+section.about img.bottom-left {
+    top: -90px;
+    left: -130px;
+}
+
+} */
+
+@media only screen and (max-width:560px){
+  
+  
+section.hero {
+  background-size: cover;
+  background-position: center 30px;
+}
+  
+    section.hero h2 {
+    width: 100%;
+}
+
+section.hero p {
+    width: 100%;
+}
+
+section.hero img.curves {
+margin-top: -80px;
+width: 130%;
+}
+
+@media only screen and (max-height: 998px) {
+    section.about img {
+    position: absolute;
+    margin: 0;
+    width: 70%;
+}
+
+section.about img.top-left {
+    top: -80px;
+    left: -80px;
+}
+
+section.about img.top-right {
+    top: -80px;
+    right: -80px;
+}
+
+section.about img.bottom-right {
+    top: 28%;
+    right: -88px;
+}
+
+section.about img.bottom-left {
+    top: 28%;
+    left: -88px;
+}
+}
+
+
+}
+
+@media only screen and (min-height: 1024px) {
+  
+   section.about img {
+    position: absolute;
+    margin: 0;
+    width: 50%;
+}
+
+    section.about img.top-left {
+    top: -200px;
+    left: -100px;
+}
+
+section.about img.top-right {
+    top: -200px;
+    right: -120px;
+}
+
+section.about img.bottom-right {
+    top: 50px;
+    right: -80px;
+}
+
+section.about img.bottom-left {
+    top: 50px;
+    left: -80px;
+}
+}
+
+@media only screen and (max-width: 560px){
+    section.about {
+    padding: 3em 2em;
+}
+
+    section#services .service {
+    padding: 0 2em;
+}
+
+section#ecosystem {
+    margin-top: 7em;
+    height: 25vh;
+}
+
+section#ecosystem span h3{
+ font-size: 16px;
+}
+
+section#ecosystem span p{
+ font-size: 12px;
+ width: 55%;
+}
+
+    section.why  {
+    padding: 7em 2em;
+}
+
+section.question {
+ background-size: cover;
+}
+
+section.question h1 {
+ font-size: 30px;
+ width: 80%;
+}
+
+section.question p {
+ font-size: 12px;
+ width: 80%;
+}
+
+section.question img {
+ position:absolute;
+ width: 80%; 
+}
+
+section.question img.top-left {
+    top: 0;
+    right: 45%;
+}
+
+section.question img.top-right {
+    top: 0;
+    left: 45%;
+}
+
+section.question img.bottom-right {
+    top: 30%;
+    left: 48%;
+}
+
+section.question img.bottom-left {
+    top: 30%;
+    right: 48%;
+}
+
 }
