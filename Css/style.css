@@ -449,10 +449,17 @@ section#ecosystem {
     margin-top: 8em;
     background: url("../Imgs/eco.png") no-repeat;
     background-size: 100%;
-    height: 110vh;
+    /* height: 110vh; */
+   padding-top: 18em;
+   padding-bottom:18em;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
 }
 
-section#ecosystem div{
+/* section#ecosystem div{
  position: relative;
  display: flex;
  flex-direction: column;
@@ -481,28 +488,28 @@ section#ecosystem div.ecosystem2 {
 section#ecosystem div.ecosystem3 {
     left: 83%;
     top: 20px;
-}
+} */
 
-section#ecosystem span {
+section#ecosystem div {
  /* margin-top: -300px; */
- position: relative;
- top: 60%;
+ position:absolute;
+ bottom:10%;
 }
 
-section#ecosystem span h3 {
+section#ecosystem div h3 {
     color: #fff;
     text-align: center;
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 500;
 }
 
-section#ecosystem span p {
+section#ecosystem div p {
     color: #cdcdcd;
     text-align: center;
     font-size: 18px;
     font-weight: 300;
     /* margin-top: 1em; */
-    width: 28%;
+    width: 50%;
     margin:1em auto;
 }
 
@@ -567,7 +574,7 @@ section.why .right div {
 }
 
 section.why .right div.card1 {
- background: url("../Imgs/Ellipse\ 81.png") no-repeat right;
+ background: url("../Imgs/Ellipse\ 81.png") no-repeat bottom right;
  position: relative;
 }
 
@@ -585,7 +592,7 @@ section.why .right div.card1:hover img.img-hover{
 }
 
 section.why .right div.card2 {
-    background: url("../Imgs/Ellipse\ 81\ \(1\).png") no-repeat;
+    background: url("../Imgs/Ellipse\ 81\ \(1\).png") no-repeat bottom left;
     position: relative;
 }
 
@@ -603,7 +610,7 @@ opacity: 1;
 }
 
 section.why .right div.card3 {
-    background: url("../Imgs/Ellipse\ 81\ \(2\).png") no-repeat right;
+    background: url("../Imgs/Ellipse\ 81\ \(2\).png") no-repeat top right;
     position: relative;
 }
 
@@ -621,7 +628,7 @@ opacity: 1;
 }
 
 section.why .right div.card4 {
-    background: url("../Imgs/Ellipse\ 81\ \(3\).png") no-repeat;
+    background: url("../Imgs/Ellipse\ 81\ \(3\).png") no-repeat top left;
     position: relative;
 }
 
@@ -956,6 +963,21 @@ width: 40%;
     }
 }
 
+@media only screen and (max-height:768px){
+
+section#ecosystem {
+   padding-top: 15em;
+   padding-bottom:15em;
+}
+}
+
+@media only screen and (max-height:1400px){
+
+section#ecosystem {
+   padding-top: 15em;
+   padding-bottom:15em;
+}
+}
 
  section.question img {
  position:absolute;
@@ -985,7 +1007,6 @@ section.question img.bottom-left {
 }
 
 }
-
 
    @media only screen and (max-width:992px) {
     
@@ -1030,7 +1051,7 @@ section.question img.bottom-left {
     
     .mobile-nav.active span::before {
      transform: rotate(-270deg);
-     transition-delay: 1s;
+     transition-delay: .5s;
     }
     
     .mobile-nav span::after {
@@ -1124,6 +1145,7 @@ section.question img.bottom-left {
 
 header nav a.logo .logo-text h3 {
 font-size: 16px;
+font-weight: 600;
 }
 
 header nav a.logo img {
@@ -1280,7 +1302,7 @@ section.about p{
 }
 
 section#services h2 {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 section#services p.title {
@@ -1294,7 +1316,7 @@ section#services .service {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 30px;
-    padding: 0 5em;
+    padding: 0 7em;
 }
 
 section#services .service .service1
@@ -1345,10 +1367,6 @@ section#services .service div {
     height: 100%;
 }
 
-section#services .service div img{
-    /* width: 100%; */
-}
-
 section#services .service div h4 {
  font-size: 20px;
 }
@@ -1358,22 +1376,31 @@ section#services .service div p {
 }
 
 section#ecosystem {
-    margin-top: 7em;
-    height: 35vh;
+    margin-top: 5em;
+    padding-top: 5.5em;
+    padding-bottom: 5.5em;
+}
+
+@media only screen and (min-height:1023px){
+    
+    section#ecosystem {
+        padding-top: 8.5em;
+        padding-bottom: 13.5em;
+    }
+    
 }
 
 
-section#ecosystem div{
- width: 100px;
-}
-
-section#ecosystem div img {
- width: 55%;
+section#ecosystem div h3 {
+ font-size: 24px;
+ font-weight: 500;
 }
 
 section#ecosystem div p {
- font-size: 12px;
+ font-size: 16px;
  margin-top: .5em;
+ width: 50%;
+ font-weight: 300;
 }
 
 section#ecosystem div.ecosystem1 {
@@ -1405,7 +1432,7 @@ section#ecosystem span p {
 }
 
 section.why  {
-    padding: 7em 5.5em;
+    padding: 7em 7.5em;
     flex-direction: column;
     gap: 100px;
 }
@@ -1466,7 +1493,7 @@ section.testimonials .swiper .swiper-wrapper {
    flex-direction: column;
    margin: 3.5em auto;
    gap: 30px;
-   width: 80%;
+   width: 70%;
 }
 
 section.testimonials .swiper .swiper-wrapper div.card1,
@@ -1607,118 +1634,71 @@ margin-top: -80px;
 width: 130%;
 }
 
+    section.about {
+        overflow: hidden;
+    }
 
+    section.about img {
+    position: absolute;
+    margin: 0;
+    width: 70%;
 }
 
-
-
-@media only screen and (max-height: 1200px) {
-    /* section.about img.top-left {
-        top: -100%;
-        left: -10%;
+    section.about img.top-left {
+        top: -50%;
+        left: -20%;
     }
     
     section.about img.top-right {
-        top: -100%;
-        right: -10%;
+        top: -50%;
+        left: 50%;
     }
     
     section.about img.bottom-right {
         bottom: 0;
-        right: -10%;
+        left: 55%;
     }
     
     section.about img.bottom-left {
         bottom: 0;
-        left: -10%;
+        left: -25%;
     }
-  
-   section.about img {
-    position: absolute;
-    margin: 0;
-    width: 50%;
-} */
-/*
-    section.about img.top-left {
-    top: -200px;
-    left: -100px;
-}
-
-section.about img.top-right {
-    top: -200px;
-    right: -120px;
-}
-
-section.about img.bottom-right {
-    top: 50px;
-    right: -80px;
-}
-
-section.about img.bottom-left {
-    top: 50px;
-    left: -80px;
-} */
-}
-
-@media only screen and (max-height: 998px) {
-    /* section.about img {
-    position: absolute;
-    margin: 0;
-
-   height: 100%;
-} */
-
-/* section.about img.top-left {
-    top: -50%;
-    left: -80px;
-}
-
-section.about img.top-right {
-    top: -50%;
-    left: 50%;
-}
-
-section.about img.bottom-right {
-    bottom: 0;
-    left: 50%;
-}
-
-section.about img.bottom-left {
-    top: 10%;
-    left: -22%;
-} */
-}
-
-@media only screen and (max-width: 560px){
-    /* section.about {
-    padding: 3em 2em;
-}
 
     section#services .service {
     padding: 0 2em;
 }
 
-section#ecosystem {
-    margin-top: 7em;
-    height: 25vh;
+/* @media only screen and (min-height:1023px){
+    
+    section#ecosystem {
+        padding-top: 8.5em;
+        padding-bottom: 13.5em;
+    }
+    
+} */
+
+
+section#ecosystem div h3 {
+ font-size: 14px;
 }
 
-section#ecosystem span h3{
- font-size: 16px;
-}
-
-section#ecosystem span p{
- font-size: 12px;
- width: 55%;
-}
-
-    section.why  {
-    padding: 7em 2em;
+section#ecosystem div p {
+ font-size: 10px;
 }
 
 section.question {
- background-size: cover;
+ padding: 3.8em 0;
+ width: 100%;
+ overflow: hidden;
 }
+
+/* section.question {
+ margin:auto;
+ padding: 7em 3em;
+ width: 60%;
+ background-size: cover;
+ position: relative; */
+/* } */
 
 section.question h1 {
  font-size: 30px;
@@ -1732,27 +1712,37 @@ section.question p {
 
 section.question img {
  position:absolute;
- width: 80%; 
+ margin:0;
+ overflow: hidden;
+ width: 70%;
 }
 
 section.question img.top-left {
-    top: 0;
-    right: 45%;
+    top: -25%;
+    right: 52%;
 }
 
 section.question img.top-right {
-    top: 0;
-    left: 45%;
+    top: -25%;
+    left: 50%;
 }
 
 section.question img.bottom-right {
-    top: 30%;
-    left: 48%;
+    bottom: -10%;
+    left: 50%;
 }
 
 section.question img.bottom-left {
-    top: 30%;
-    right: 48%;
-} */
+    bottom: -8%;
+    right: 52%;    
+}
+
+section.why  {
+    padding: 7em 2em;
+}
+
+section.testimonials .swiper .swiper-wrapper {
+   width: 80%;
+}
 
 }
