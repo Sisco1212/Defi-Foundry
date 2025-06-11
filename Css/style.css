@@ -10,6 +10,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    scroll-padding: 7rem;
 }
 
 body {
@@ -23,6 +26,7 @@ body {
 header {
     overflow: hidden;
     margin-bottom: 0;
+    height:100px;
 }
 
 header nav {
@@ -40,7 +44,7 @@ header nav {
 .static {
     padding: 1em 2em;
     background: #000;
-    box-shadow: 2px 2px 20px;
+    box-shadow: 2px 2px 20px #000;
 }
 
 header nav a.logo {
@@ -145,7 +149,7 @@ section.hero {
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 8em;
+    padding-top: 5em;
     background: url(../Imgs/Ellipse-hero.png) no-repeat center center;
 }
 
@@ -1163,7 +1167,7 @@ header nav a.logo img {
 
 section.hero {
     width: 100%;
-    padding: 10em 2em 0 2em;
+    padding: 5em 2em 0 2em;
     background: url("../Imgs/Ellipse-hero.png") no-repeat;
     background-position: center 20px;
     background-size: contain;
@@ -1580,6 +1584,162 @@ footer div.footer-bottom div.center {
     gap: 10px;
 }
 
+.wrapper .side-bar{
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     /* align-items: flex-start; */
+     gap: 5px;
+     width: 2px;
+     height: 100%;
+     position: fixed;
+     border-right: 1px solid #555;
+     /* padding-right: 5em; */
+}
+
+.wrapper .side-bar a{
+text-decoration: none;
+transition: .5s;
+width: 100%;
+padding: .8em;
+font-weight: 200;
+font-size: 16px;
+}
+
+.scrollspy {
+
+    background-color: rgba(200, 200, 200, 0.1);
+    border-right: 2px solid #fff;
+}
+
+div.con {
+ width: 70%;
+ margin-left:2em;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+div.con section#about h3{
+font-size: 24px;
+}
+
+div.con section#about p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+
+div.con section#the-goal{
+ /* margin-top: 5em; */
+}
+
+div.con section#the-goal h3{
+font-size: 24px;
+}
+
+div.con section#the-goal p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#the-approach{
+ /* margin-top: 5em; */
+}
+
+div.con section#the-approach h3{
+font-size: 24px;
+}
+
+div.con section#the-approach p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#why-approach{
+ /* margin-top: 5em; */
+}
+
+div.con section#why-approach h3{
+font-size: 24px;
+}
+
+div.con section#why-approach p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#team{
+ /* margin-top: 5em; */
+}
+
+div.con section#team h3{
+font-size: 24px;
+}
+
+div.con section#team p.title{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#team .cards{
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+   margin-top: 5em;
+   margin-bottom: 5em;
+}
+
+div.con section#team .cards div  {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+}
+
+div.con section#team .cards div img {
+   width: 50%;
+}
+
+div.con section#team .cards div h4 {
+ text-align: center;
+ margin-top: 2em;
+ font-size: 20px;
+}
+
+div.con section#team .cards div h5 {
+text-align: center;
+margin-top: 0.5em;
+font-weight: 400;
+color: #cdcdcd;
+font-size: 16px;
+}
+
+div.con section#team .cards div p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 12px;
+margin-top: 2em;
+text-align: center;
+}
+
 @media only screen and (min-height: 1024px) {
   
    /* section.about img {
@@ -1745,4 +1905,202 @@ section.testimonials .swiper .swiper-wrapper {
    width: 80%;
 }
 
+}
+
+
+/* -------------------------------------------------------
+----------------------------------------------------------
+----------------------------------------------------------
+----------------------------------------------------------
+---------------------------------------------------------- 
+about page
+*/
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 5em auto;
+    /* padding: 0 7em; */
+    width: 80%;
+    /* gap: 20px; */
+}
+
+.wrapper section{
+ height: 100vh;
+}
+
+.wrapper .side-bar{
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     /* align-items: flex-start; */
+     gap: 5px;
+     width: 20%;
+     height: 100%;
+     position: fixed;
+     border-right: 1px solid #555;
+     /* padding-right: 5em; */
+}
+
+.wrapper .side-bar a{
+text-decoration: none;
+transition: .5s;
+width: 100%;
+padding: .8em;
+font-weight: 200;
+font-size: 16px;
+}
+
+.scrollspy {
+
+    background-color: rgba(200, 200, 200, 0.1);
+    border-right: 2px solid #fff;
+}
+
+div.con {
+ width: 70%;
+ margin-left:20em;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+div.con section#about h3{
+font-size: 24px;
+}
+
+div.con section#about p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+
+div.con section#the-goal{
+ /* margin-top: 5em; */
+}
+
+div.con section#the-goal h3{
+font-size: 24px;
+}
+
+div.con section#the-goal p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#the-approach{
+ /* margin-top: 5em; */
+}
+
+div.con section#the-approach h3{
+font-size: 24px;
+}
+
+div.con section#the-approach p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#why-approach{
+ /* margin-top: 5em; */
+}
+
+div.con section#why-approach h3{
+font-size: 24px;
+}
+
+div.con section#why-approach p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#team{
+ /* margin-top: 5em; */
+}
+
+div.con section#team h3{
+font-size: 24px;
+}
+
+div.con section#team p.title{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 14px;
+margin-top: 2em;
+line-height: 2;
+}
+
+div.con section#team .cards{
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+   margin-top: 5em;
+   margin-bottom: 5em;
+}
+
+div.con section#team .cards div  {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+}
+
+div.con section#team .cards div img {
+   width: 50%;
+}
+
+div.con section#team .cards div h4 {
+ text-align: center;
+ margin-top: 2em;
+ font-size: 20px;
+}
+
+div.con section#team .cards div h5 {
+text-align: center;
+margin-top: 0.5em;
+font-weight: 400;
+color: #cdcdcd;
+font-size: 16px;
+}
+
+div.con section#team .cards div p{
+color: #cdcdcd;
+font-weight: 300;
+font-size: 12px;
+margin-top: 2em;
+text-align: center;
+}
+
+ a.join{
+   text-align: center;
+ padding: 1em 2em;
+ border-radius: 30px;
+ font-weight: bold;
+ font-size: 14px;
+ background: #fff;
+ color: #000;
+ text-decoration: none;
+ margin:auto;
+ transition: .5s;
+ margin-top: 8em;
+}
+
+
+ a.join:hover{
+  background:rgba(185, 255, 234, 0.5);
 }
