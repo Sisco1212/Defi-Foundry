@@ -1584,126 +1584,57 @@ footer div.footer-bottom div.center {
     gap: 10px;
 }
 
+.wrapper {
+        display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    margin: 5em auto ;
+    /* padding: 0 7em; */
+    width: 80% !important;
+    /* gap: 20px; */
+}
+
 .wrapper .side-bar{
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-     /* align-items: flex-start; */
-     gap: 5px;
-     width: 2px;
-     height: 100%;
-     position: fixed;
-     border-right: 1px solid #555;
-     /* padding-right: 5em; */
-}
-
-.wrapper .side-bar a{
-text-decoration: none;
-transition: .5s;
-width: 100%;
-padding: .8em;
-font-weight: 200;
-font-size: 16px;
-}
-
-.scrollspy {
-
-    background-color: rgba(200, 200, 200, 0.1);
-    border-right: 2px solid #fff;
+     display: none !important;
 }
 
 div.con {
- width: 70%;
- margin-left:2em;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+ width: 90% !important;
+ margin-left:0 !important;
+
 }
 
-div.con section#about h3{
-font-size: 24px;
+div.con section{
+  height: 100%;
 }
-
-div.con section#about p{
-color: #cdcdcd;
-font-weight: 300;
-font-size: 14px;
-margin-top: 2em;
-line-height: 2;
-}
-
 
 div.con section#the-goal{
- /* margin-top: 5em; */
-}
-
-div.con section#the-goal h3{
-font-size: 24px;
-}
-
-div.con section#the-goal p{
-color: #cdcdcd;
-font-weight: 300;
-font-size: 14px;
-margin-top: 2em;
-line-height: 2;
+ margin-top: 5em;
 }
 
 div.con section#the-approach{
- /* margin-top: 5em; */
-}
-
-div.con section#the-approach h3{
-font-size: 24px;
-}
-
-div.con section#the-approach p{
-color: #cdcdcd;
-font-weight: 300;
-font-size: 14px;
-margin-top: 2em;
-line-height: 2;
+ margin-top: 5em;
 }
 
 div.con section#why-approach{
- /* margin-top: 5em; */
+ margin-top: 5em;
 }
 
-div.con section#why-approach h3{
-font-size: 24px;
+div.con section#team {
+    margin-top: 5em;
+ width: 100% !important;
 }
 
-div.con section#why-approach p{
-color: #cdcdcd;
-font-weight: 300;
-font-size: 14px;
-margin-top: 2em;
-line-height: 2;
-}
-
-div.con section#team{
- /* margin-top: 5em; */
-}
-
-div.con section#team h3{
-font-size: 24px;
-}
-
-div.con section#team p.title{
-color: #cdcdcd;
-font-weight: 300;
-font-size: 14px;
-margin-top: 2em;
-line-height: 2;
-}
 
 div.con section#team .cards{
-   display: flex;
-   justify-content:space-between;
-   align-items: center;
+   flex-direction: column;
    margin-top: 5em;
-   margin-bottom: 5em;
+   margin-bottom: 0;
+   margin-left: auto;
+   margin-right: auto;
+   gap: 70px;
+   width: 50% !important;
 }
 
 div.con section#team .cards div  {
@@ -1735,9 +1666,13 @@ font-size: 16px;
 div.con section#team .cards div p{
 color: #cdcdcd;
 font-weight: 300;
-font-size: 12px;
+font-size: 14px;
 margin-top: 2em;
 text-align: center;
+}
+
+ a.join{
+ margin-top: 0 !important;
 }
 
 @media only screen and (min-height: 1024px) {
@@ -1903,6 +1838,11 @@ section.why  {
 
 section.testimonials .swiper .swiper-wrapper {
    width: 80%;
+}
+
+div.con section#team .cards{
+   gap: 70px;
+   width: 80% !important;
 }
 
 }
