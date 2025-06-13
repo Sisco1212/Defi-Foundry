@@ -1551,31 +1551,6 @@ section.question p {
  width: 100%;
 }
 
-/* section.question img {
- position:absolute;
- width: 80%; 
-}
-
-section.question img.top-left {
-    top: -40%;
-    right: 35%;
-}
-
-section.question img.top-right {
-    top: -40%;
-    left: 35%;
-}
-
-section.question img.bottom-right {
-    top: 10%;
-    left: 35%;
-}
-
-section.question img.bottom-left {
-    top: 10%;
-    right: 35%;
-} */
-
 footer p.title {
     font-size: 14px;
     width: 50%;
@@ -1698,33 +1673,57 @@ text-align: center;
  margin-top: 0 !important;
 }
 
-@media only screen and (min-height: 1024px) {
-  
-   /* section.about img {
-    position: absolute;
-    margin: 0;
-    width: 70%;
+section#startup-form div#con {
+    flex-direction: column;
+    gap: 50px;
 }
 
-    section.about img.top-left {
-    top: -250px;
-    left: -150px;
+section#startup-form div#con .text{
+ width: 80% !important;
 }
 
-section.about img.top-right {
-    top: -250px;
-    right: -150px;
+section#startup-form div#con .text h2{
+ font-size: 36px;
 }
 
-section.about img.bottom-right {
-    top: -50px;
-    right: -130px;
+section#startup-form div#con .form{
+ width: 80% !important;
 }
 
-section.about img.bottom-left {
-    top: -50px;
-    left: -130px;
-} */
+section#startup-form div#con form div.form-details2 div.form-parent{
+ display: flex !important;
+ width: 100% !important;
+ justify-content: space-between;
+ flex-direction: column;
+ gap: 20px;
+}
+
+
+
+section#team-form div#con {
+    flex-direction: column;
+    gap: 50px;
+}
+
+section#team-form div#con .text{
+ width: 80% !important;
+}
+
+section#team-form div#con .text h2{
+ font-size: 36px;
+ width: 100% !important;
+}
+
+section#team-form div#con .form{
+ width: 80% !important;
+}
+
+section#team-form div#con form div.form-details div.form-parent{
+ display: flex !important;
+ width: 100% !important;
+ justify-content: space-between;
+ flex-direction: column;
+ gap: 20px;
 }
 
 }
@@ -1888,6 +1887,70 @@ section div#contact-us .text{
 
 section div#contact-us .text p{
  width: 100% !important;
+}
+
+section#startup-form {
+    width: 100%;
+    margin:auto;
+}
+
+section#startup-form div#con {
+    flex-direction: column;
+    gap: 30px;
+}
+
+section#startup-form div#con .text{
+ width: 99% !important;
+}
+
+section#startup-form div#con .text h2{
+ font-size: 30px !important;
+}
+
+section#startup-form div#con .form{
+ width: 100% !important;
+}
+
+section#startup-form div#con .form form{
+    border: none;
+    padding: 0;
+    width: 100% !important;
+}
+
+section#team-form div#con .text{
+ width: 100% !important;
+}
+
+section#team-form div#con .text h2{
+ font-size: 36px;
+ width: 100% !important;
+}
+
+section#team-form div#con .text p{
+ font-weight: 200;
+ color: #cdcdcd;
+ margin-top: 0.5em;
+ margin-bottom: 0.5em;
+ font-size: 14px;
+ width: 100% ;
+}
+    
+    section#team-form div#con .form{
+        border: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+}
+
+section#team-form div#con form div.form-details2 div.form-parent{
+  flex-direction: column !important;
+}
+
+section#team-form div#con .form .indicator{
+ width: 100% !important;
+}
+
+section#team-form div#con .form .indicator div span{
+ display: none;
 }
 
 }
@@ -2212,5 +2275,370 @@ section div#contact-us form button.continue{
 
 
 button.continue:hover{
+  background:rgba(185, 255, 234, 0.5);
+}
+
+section#startup-form {
+    width: 80%;
+    margin:auto;
+}
+
+section#startup-form div#con {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    /* gap: 99px; */
+}
+
+section#startup-form div#con .text{
+ width: 10%;
+}
+
+section#startup-form div#con .text h2{
+ font-size: 36px;
+}
+
+section#startup-form div#con .form{
+ width: 60%;
+}
+
+section#startup-form div#con form{
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 2em;
+}
+
+section#startup-form div#con form div.form-details{
+    /* opacity: 0; */
+    display: none;
+}
+
+section#startup-form div#con form div.form-details2{
+    /* opacity: 0; */
+    display: none;
+}
+
+section#startup-form div#con form div.form-details3{
+    /* opacity: 0; */
+    display: none;
+}
+
+
+section#startup-form div#con form div.form-details2 div.form-parent{
+ display: flex !important;
+ width: 100% !important;
+ justify-content: space-between;
+ gap: 20px;
+}
+
+section#startup-form div#con form div.form-details2 div.form-parent div{
+ width: 100% !important;
+}
+
+section#startup-form div#con form .indicator{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid #777;
+ padding-bottom: 1em;
+ margin-bottom: 3em;
+ width: 90%;
+}
+
+section#startup-form div#con form .indicator .no1,
+section#startup-form div#con form .indicator .no2,
+section#startup-form div#con form .indicator .no3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+section#startup-form div#con form .indicator .no1 p,
+section#startup-form div#con form .indicator .no2 p,
+section#startup-form div#con form .indicator .no3 p{
+    font-size: 13px;
+    color: #cdcdcd;
+}
+
+section#startup-form div#con form .indicator .no1 .no,
+section#startup-form div#con form .indicator .no2 .no,
+section#startup-form div#con form .indicator .no3 .no{
+ background: #adadad;
+ border-radius: 50%;
+ color: #fff;
+ /* width: 20px;
+ height: 20px; */
+ padding: .3em .6em;
+}
+
+section#startup-form div#con form label{
+ color: #cdcdcd;
+ font-weight: 400;
+ font-size: 14px;
+}
+
+section#startup-form div#con form input{
+    padding: .8em 2em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 40px;
+    margin-top:1.5em;
+}
+
+section#startup-form div#con form select{
+    padding: .8em 3em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 40px;
+    margin-bottom:1.5em;
+}
+
+section#startup-form div#con form textarea{
+    padding: .8em 3em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 90px;
+    margin-bottom:1.5em;
+}
+
+section#startup-form div#con form .buttons {
+ margin-top: 3em;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100% !important;
+ padding: 0;
+}
+
+section#startup-form div#con form button.back{
+ background: none;
+ border: none;
+ outline: none;
+ cursor: pointer;
+ text-transform: uppercase;
+}
+section#startup-form div#con form button.continue{
+ color: #000;
+ text-align: center;
+ padding: .8em 2em;
+ border-radius: 30px;
+ font-weight: bold;
+ font-size: 12px;
+ background: #fff;
+ color: #000;
+ text-decoration: none;
+ transition: .5s;
+ margin-top: 1em;
+ border: none;
+ outline: none;
+ cursor: pointer;
+}
+
+
+section#startup-form .continue:hover{
+  background:rgba(185, 255, 234, 0.5);
+}
+
+
+section#team-form {
+    width: 80%;
+    margin:auto;
+}
+
+section#team-form div#con {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    /* gap: 99px; */
+}
+
+section#team-form div#con .text{
+ width: 30%;
+}
+
+section#team-form div#con .text h2{
+ font-size: 36px;
+ width: 50%;
+}
+
+section#team-form div#con .text p{
+ font-weight: 200;
+ color: #cdcdcd;
+ margin-top: 0.5em;
+ margin-bottom: 0.5em;
+ font-size: 14px;
+}
+
+section#team-form div#con .form{
+ width: 60%;
+ border: 1px solid #333;
+ border-radius: 20px;
+ padding: 2em;
+}
+
+section#team-form div#con form.form-step{
+ display: none;
+}
+
+section#team-form div#con form.form-step.active{
+ display: block;
+}
+
+section#team-form div#con form div.form-details div.form-parent{
+ display: flex;
+  width: 100% !important;
+ justify-content: space-between;
+ gap: 20px;
+}
+
+section#team-form div#con form div.form-details div.form-parent div{
+ width: 100% !important;
+}
+
+
+section#team-form div#con form div.form-details2 div.form-parent{
+ display: flex !important;
+ width: 100% !important;
+ justify-content: space-between;
+ gap: 20px;
+}
+
+section#team-form div#con form div.form-details2 div.form-parent div{
+ width: 100% !important;
+}
+
+section#team-form div#con .form .indicator{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid #777;
+ padding-bottom: 1em;
+ margin-bottom: 3em;
+ width: 90%;
+}
+
+section#team-form div#con .form .indicator .no1,
+section#team-form div#con .form .indicator .no2,
+section#team-form div#con .form .indicator .no3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+section#team-form div#con .form .indicator .no1 p,
+section#team-form div#con .form .indicator .no2 p,
+section#team-form div#con .form .indicator .no3 p{
+    font-size: 12px;
+    color: #cdcdcd;
+}
+
+section#team-form div#con .form .indicator .no{
+ border-radius: 50%;
+ color: #fff;
+ /* width: 20px;
+ height: 20px; */
+ padding: .3em .6em;
+}
+
+section#team-form div#con .form .indicator .no.active{
+background-color:#fff;
+color: #000;
+}
+
+section#team-form div#con form label{
+ color: #cdcdcd;
+ font-weight: 400;
+ font-size: 14px;
+}
+
+section#team-form div#con form input{
+    padding: .8em 2em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 40px;
+    margin-bottom:1.5em;
+}
+
+section#team-form div#con form select{
+    padding: .8em 3em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 40px;
+    margin-bottom:1.5em;
+}
+
+section#team-form div#con form textarea{
+    padding: .8em 3em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 90px;
+    margin-bottom:1.5em;
+}
+
+section#team-form div#con form .buttons {
+ margin-top: 3em;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100% !important;
+ padding: 0;
+}
+
+section#team-form div#con form button.back{
+ background: none;
+ border: none;
+ outline: none;
+ cursor: pointer;
+ text-transform: uppercase;
+}
+section#team-form div#con form button.continue{
+ color: #000;
+ text-align: center;
+ padding: .8em 2em;
+ border-radius: 30px;
+ font-weight: bold;
+ font-size: 12px;
+ background: #fff;
+ color: #000;
+ text-decoration: none;
+ transition: .5s;
+ margin-top: 1em;
+ border: none;
+ outline: none;
+ cursor: pointer;
+}
+
+
+section#team-form .continue:hover{
   background:rgba(185, 255, 234, 0.5);
 }
