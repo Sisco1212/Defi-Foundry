@@ -1121,6 +1121,12 @@ section div#contact-us .text p{
     
     header .mobile-menu ul {
      position: relative;
+     display: flex;
+     flex-direction: column;
+     gap: 50px;
+     justify-content: center;
+     align-items: center;
+     /* margin-top: 2em; */
     }
     
     header .mobile-menu ul li {
@@ -1128,7 +1134,7 @@ section div#contact-us .text p{
      list-style-type: none;
      text-align: center;
      display: block;
-     margin: 3em auto;
+     /* margin: 3em auto; */
     }
     
     header .mobile-menu ul li a {
@@ -1160,6 +1166,29 @@ section div#contact-us .text p{
      transform-origin: left;
      transition: 0.5s transform;
     }
+
+    header .mobile-menu ul a.joinus {
+    background: #fff;
+    /* width: 120px;
+    height: 42px; */
+    text-align: center;
+    padding: 1em 4em;
+    /* padding-top: .8em; */
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    color: #000;
+    transition: .5s;
+    animation-delay: .9s;
+}
+
+header .mobile-menu ul  a.joinus:hover {
+    background:rgba(185, 255, 234, 0.5);
+    font-size: 15px;
+    color: #000;
+}
+
     .mobile-nav {
         display: flex;
     }
@@ -2495,6 +2524,13 @@ section#team-form div#con .form{
 
 section#team-form div#con form.form-step{
  display: none;
+}
+
+ /* section#team-form div#con form.form-step div.form-details2 */
+  .hide-form{
+ display: none !important;
+ /* opacity: 0 !important;
+ margin: 500px; */
 }
 
 section#team-form div#con form.form-step.active{

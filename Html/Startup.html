@@ -51,7 +51,7 @@
 </header>
 </div>
 
-<section id="startup-form">
+<!-- <section id="startup-form">
 <div id="con">
 <div class="text">
 <h2>Startup Application Form</h2>
@@ -242,7 +242,275 @@
 </form>
 </div>
 </div>
+</section> -->
+
+<section id="team-form">
+<div id="con">
+<div class="text">
+<h2>Startup Application Form</h2>
+<p>At DeFi Foundry, we’re more than a venture studio, we’re your strategic partner. From fundraising and market making to design, community, and token support, we help early-stage crypto projects go from idea to traction. If you're building something bold and need hands-on support to scale, apply now. Let’s build the future together.</p>
+</div>
+
+<div class="form">
+    <div class="indicator">
+    <div class="no1">
+    <p class="no active">1</p>
+    <p>Project Details</p>
+    <span>></span>
+</div>
+<div class="no2">
+    <p class="no">2</p>
+    <p>Services</p>
+    <span>></span>
+</div>
+<div class="no3">
+    <p class="no">3</p>
+    <p>Other Details</p>
+    <span>></span>
+    </div>
+    </div>
+    
+<form class="form-step active">
+
+<div class="form-details">
+<div class="form-parent">
+<div>
+    <label for="name">Project Name*</label>
+    <br>
+    <input name="name" id="name" type="text" placeholder="Enter Project Name" required>
+</div>
+<div>
+    <label for="email">Email address*</label>
+    <br>
+    <input required type="email" name="email" id="email" placeholder="hello@example.com">
+</div>
+</div>
+
+<div class="form-parent">
+<div>
+    <label for="x">X*</label>
+    <br>
+    <input name="x" id="x" type="text" placeholder="@username" required>
+</div>
+<div>
+    <label for="telegram">Telegram (If any)</label>
+    <br>
+    <input type="text" name="telegram" id="telegram" placeholder="@username">
+</div>
+</div>
+
+<div class="form-parent">
+<div>
+    <label for="name">Discord (If any)</label>
+    <br>
+    <input name="discord" id="discord" type="text" placeholder="@username">
+</div>
+<div>
+    <label for="company">LinkedIn Id (If any)</label>
+    <br>
+    <input type="text" name="linkedin" id="linkedin" placeholder="@username">
+</div>
+</div>
+
+        <div>
+            <label for="description">Brief Description</label>
+            <br>
+            <textarea name="description" id="description"></textarea>
+        </div>
+
+<div class="buttons">
+    <span></span>
+    <button type="submit" class="continue">Continue</button>
+</div>
+</div>
+</form>
+
+<form class="form-step">
+    <div class="form-details2">
+        <div>
+      <label for="service">What service do you need?*</label>
+    <br>
+    <select name="service" id="service" onchange="showForm()">
+    <option value="">Select an option</option>
+    <option value="OTCFundraising">OTC Fundraising</option>
+    <option value="MarketMaking">Market Making</option>
+    <option value="TGEFundraising">Pre-TGE Fundraising</option>
+    <option value="Advisory">Advisory</option>
+    </select>
+</div>
+
+<div class="hide-form" id="OTCFundraising">
+<form>
+     <div class="form-parent">
+<div>
+    <label for="coingecko">Coingecko/cmc link*</label>
+    <br>
+    <input name="coingecko" id="coingecko" type="text" placeholder="Cmc URL">
+</div>
+<div>
+    <label for="pitchdeck">Pitch deck*</label>
+    <br>
+    <input type="text" name="pitchdeck" id="pitchdeck" placeholder="pitch deck url">
+</div>
+</div>
+        
+<div>
+<label for="what">Brief description</label>
+<br>
+<textarea name="description" id="description"></textarea>
+</div>
+
+</form>
+</div>
+
+
+<div class="hide-form" id="MarketMaking">
+<form>
+     <div class="form-parent">
+<div>
+    <label for="coingecko">Coingecko/cmc link*</label>
+    <br>
+    <input name="coingecko" id="coingecko" type="text" placeholder="Cmc URL">
+</div>
+<div>
+    <label for="company">Pitch deck*</label>
+    <br>
+    <input type="text" name="linkedin" id="linkedin" placeholder="@username">
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<input type="radio" id="listed" name="listed" style="width: min-content;">
+<label for="listed">Listed</label>    
+
+<input type="radio" id="listed" name="listed" style="width: min-content;">
+<label for="not-listed">Not listed</label>    
+</div>
+<div>
+<label for="what">Brief description</label>
+<br>
+<textarea name="description" id="description"></textarea>
+</div>
+
+</form>
+</div>
+
+<div class="hide-form" id="TGEFundraising">
+<form>
+     <div class="form-parent">
+<div>
+      <label for="stage">Current Stage*</label>
+    <br>
+    <select name="stage" id="stage">
+    <option value="">Select an option</option>
+    <option value="Stage1">Stage1</option>
+    <option value="Stage2">Stage2</option>
+    <option value="Stage3">Stage3</option>
+    </select>
+</div>
+
+<div>
+    <label for="pitchdeck">Pitch deck*</label>
+    <br>
+    <input type="text" name="pitchdeck" id="pitchdeck" placeholder="pitchdeckurl">
+</div>
+</div>
+
+<div class="form-parent">
+<div>
+      <label for="funds">Have you raised funds?*</label>
+    <br>
+    <select name="funds" id="funds">
+    <option value="">Select an option</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+    </select>
+</div>
+
+<div>
+    <label for="howmuch">If yes, how much?*</label>
+    <br>
+    <input type="text" name="howmuch" id="howmuch" placeholder="0">
+</div>
+</div>
+
+<div>
+<label for="what">Brief description</label>
+<br>
+<textarea name="description" id="description"></textarea>
+</div>
+
+</form>
+</div>
+
+<div class="hide-form" id="Advisory">
+<form>
+     <div class="form-parent">
+<div>
+    <label for="coingecko">Coingecko/cmc link*</label>
+    <br>
+    <input name="coingecko" id="coingecko" type="text" placeholder="Cmc URL">
+</div>
+<div>
+    <label for="company">Pitch deck*</label>
+    <br>
+    <input type="text" name="linkedin" id="linkedin" placeholder="@username">
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<input type="radio" id="listed" name="listed" style="width: min-content;">
+<label for="listed">Listed</label>    
+
+<input type="radio" id="listed" name="listed" style="width: min-content;">
+<label for="not-listed">Not listed</label>    
+</div>
+<div>
+<label for="what">Brief description</label>
+<br>
+<textarea name="description" id="description"></textarea>
+</div>
+
+</form>
+</div>
+
+<div class="buttons">
+    <button class="back">Back</button>
+    <button type="submit" class="continue">Continue</button>
+</div>
+</div>
+
+
+</form>
+
+<form class="form-step">
+    <div class="form-details3">
+        <div>
+            <label for="Anything">Anything else we should know?</label>
+            <br>
+            <textarea name="Anything" id="Anything"></textarea>
+        </div>
+     
+<div>
+      <label for="stage">How did you hear about us?</label>
+    <br>
+    <select name="hear" id="hear">
+    <option value="">Select an option</option>
+    <option value="Facebook">Facebook</option>
+    <option value="X">X</option>
+    <option value="Discord">Discord</option>
+    </select>
+</div>
+
+<div class="buttons">
+    <button class="back">Back</button>
+    <button type="submit" class="continue">Submit</button>
+</div>
+</div>
+</form>
+
+</div>
+</div>
 </section>
+
 
 <footer>
 <div class="logo">
@@ -297,6 +565,79 @@ let nav = document.querySelector(".mobile-menu");
 menuToggle.onclick = function() {
   menuToggle.classList.toggle("active");
   nav.classList.toggle("show");
+}
+
+const steps = document.querySelectorAll(".form-step");
+const indicators = document.querySelectorAll(".no");
+const nextBtns = document.querySelectorAll(".continue");
+const backBtns = document.querySelectorAll(".back");
+
+let currentStep = 0;
+
+function showStep(index) {
+    steps.forEach((step, i) => {
+        step.classList.toggle("active", i === index);
+        indicators[i].classList.toggle("active", i === index);
+    });
+}
+
+nextBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        if (currentStep < steps.length - 1) {
+            e.preventDefault();
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+});
+
+backBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        if (currentStep > 0) {
+            e.preventDefault()
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+});
+
+function showForm() {
+    const selected = document.getElementById("service").value;
+    const otcFundraising = document.getElementById("OTCFundraising");
+    const marketMaking = document.getElementById("MarketMaking");
+    const TGEFundraising = document.getElementById("TGEFundraising");
+    const Advisory = document.getElementById("Advisory");
+
+    if (selected == "OTCFundraising")  {
+        otcFundraising.classList.remove("hide-form");
+        marketMaking.classList.add("hide-form");
+        TGEFundraising.classList.add("hide-form");
+        Advisory.classList.add("hide-form");
+    }
+    else if (selected == "TGEFundraising")  {
+        TGEFundraising.classList.remove("hide-form");
+        marketMaking.classList.add("hide-form");
+        otcFundraising.classList.add("hide-form");
+        Advisory.classList.add("hide-form");
+    }
+    else if (selected == "MarketMaking")  {
+        marketMaking.classList.remove("hide-form");
+        otcFundraising.classList.add("hide-form");
+        TGEFundraising.classList.add("hide-form");
+        Advisory.classList.add("hide-form");
+    }
+    else if (selected == "Advisory")  {
+        Advisory.classList.remove("hide-form");
+        TGEFundraising.classList.add("hide-form");
+        marketMaking.classList.add("hide-form");
+        otcFundraising.classList.add("hide-form");
+    }
+    else {
+        Advisory.classList.add("hide-form");
+        TGEFundraising.classList.add("hide-form");
+        marketMaking.classList.add("hide-form");
+        otcFundraising.classList.add("hide-form");
+    }
 }
 
 </script>
