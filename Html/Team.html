@@ -29,7 +29,7 @@
 <ul class="nav-links">
     <li><a href="../index.html" class="home">Home</a></li>
     <li><a href="About.html" class="about">About Us</a></li>
-    <li><a href="#services" class="services">Services</a></li>
+    <li><a href="../index.html#services" class="services">Services</a></li>
     <li><a href="Contact.html" class="contact">Contact</a></li>
 </ul>
 
@@ -44,7 +44,7 @@
   <ul class="links">
     <li><a href="../index.html" class="">Home</a></li>
     <li><a href="About.html" class="about">About Us</a></li>
-    <li><a href="#services" class="services">Services</a></li>
+    <li><a href="../index.html#services" class="services">Services</a></li>
     <li><a href="Contact.html" class="contact">Contact</a></li>
   </ul>
 </div>
@@ -58,7 +58,7 @@
 <p>Join a team that’s building the future of Web3 from the ground up. At Defi Foundry, we’re more than just a venture studio, we’re a collective of thinkers, designers, strategists, and engineers committed to helping early-stage crypto projects thrive. If you're passionate about innovation, collaboration, and creating real impact, we’d love to hear from you.</p>
 </div>
 
-<div class="form">
+<form class="form">
     <div class="indicator">
     <div class="no1">
     <p class="no active">1</p>
@@ -77,7 +77,7 @@
     </div>
     </div>
     
-<form class="form-step active">
+<div class="form-step active">
 
 <div class="form-details">
 <div class="form-parent">
@@ -103,6 +103,7 @@
       <label for="location">Location*</label>
     <br>
     <select name="location" id="location" required>
+    <option value="">Select an option</option>
     <option value="Lagos">Lagos</option>
     <option value="Port Harcourt">Port Harcourt</option>
     <option value="Kwara">Kwara</option>
@@ -137,19 +138,16 @@
     <input type="text" name="linkedin" id="linkedin" placeholder="@username">
 </div>
 </div>
-<div class="buttons">
-    <span></span>
-    <button type="submit" class="continue">Continue</button>
 </div>
 </div>
-</form>
 
-<form class="form-step">
+<div class="form-step">
     <div class="form-details2">
         <div>
       <label for="role">What role are you applying for?*</label>
     <br>
-    <select name="role" id="role">
+    <select name="role" id="role" required>
+    <option value="">Select an option</option>
     <option value="Role1">Role</option>
     <option value="Role2">Role2</option>
     <option value="Role3">Role3</option>
@@ -162,19 +160,20 @@
 <div>
     <label for="skills">Skills*</label>
     <br>
-    <input name="skills" id="skills" type="text" placeholder="Enter skills">
+    <input name="skills" id="skills" type="text" placeholder="Enter skills" required>
 </div>
 <div>
-    <label for="email">Years of Experience*</label>
+    <label for="Years">Years of Experience*</label>
     <br>
-    <input type="email" name="email" id="email" placeholder="hello@example.com">
+    <input type="text" name="Years" id="Years" placeholder="2 Years" required>
 </div>
 </div>
 
 <div>
     <label for="duration">How long do you want to work with us?*</label>
     <br>
-    <select name="duration" id="duration">
+    <select name="duration" id="duration" required>
+    <option value="">Select an option</option>
     <option value="1 Year">1 Year</option>
     <option value="2 Years">2 Years</option>
     <option value="3 Years">3 Years</option>
@@ -182,22 +181,17 @@
     <option value="5 Years">5 Years</option>
 </select>
 </div>
-
-<div class="buttons">
-    <button class="back">Back</button>
-    <button type="submit" class="continue">Continue</button>
-</div>
 </div>
 
 
-</form>
+</div>
 
-<form class="form-step">
+<div class="form-step">
     <div class="form-details3">
         <div>
             <label for="whyus">Why do you want to work with us?*</label>
             <br>
-            <textarea name="whyus" id="whyus"></textarea>
+            <textarea name="whyus" id="whyus" required></textarea>
         </div>
         
         <div>
@@ -209,19 +203,19 @@
 <div>
 <label for="what">What would you bring to the team that's hard to find?*</label>
 <br>
-<textarea name="what" id="what"></textarea>
+<textarea name="what" id="what" required></textarea>
 </div>
 
+
+</div>
+</div>
 
 <div class="buttons">
     <button class="back">Back</button>
-    <button type="submit" class="continue">Submit</button>
+    <button type="submit" class="continue">Continue</button>
 </div>
-</div>
+
 </form>
-
-
-</div>
 </div>
 </section>
 
@@ -282,37 +276,67 @@ menuToggle.onclick = function() {
 
 const steps = document.querySelectorAll(".form-step");
 const indicators = document.querySelectorAll(".no");
-const nextBtns = document.querySelectorAll(".continue");
-const backBtns = document.querySelectorAll(".back");
+const nextBtns = document.querySelector(".continue");
+const backBtns = document.querySelector(".back");
+const multiStepForm = document.querySelector(".form");
 
 let currentStep = 0;
 
 function showStep(index) {
     steps.forEach((step, i) => {
         step.classList.toggle("active", i === index);
+        backBtns.style.display = index > 0 ? "block" : "none";
+        nextBtns.textContent = index === steps.length - 1 ? "Submit" : "Continue";
         indicators[i].classList.toggle("active", i === index);
     });
 }
 
-nextBtns.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        if (currentStep < steps.length - 1) {
-            e.preventDefault();
-            currentStep++;
-            showStep(currentStep);
-        }
-    });
-});
 
-backBtns.forEach(btn => {
-    btn.addEventListener("click", (e) => {
+    nextBtns.addEventListener("click", (e) => {
+        const currentForm = steps[currentStep];
+        const requiredInputs = Array.from(currentForm.querySelectorAll('[required]')).filter(input => input.offsetParent !== null);
+        let allValid = true;
+        requiredInputs.forEach(input => {
+           if (!input.checkValidity()) {
+            allValid = false;
+           } 
+        });
+        if (!allValid) {
+            // currentForm.reportValidity();
+            const firstInvalid = requiredInputs.find(input => !input.checkValidity());
+            if (firstInvalid) {
+                firstInvalid.reportValidity();
+                firstInvalid.focus();
+            }
+            return;
+        }
+
+        if (currentStep === steps.length - 1) {
+            alert("Form submitted");
+            multiStepForm.submit();
+            currentStep = 0;
+            showStep(currentStep);
+            return;
+        }
+
+        currentStep++;
+        showStep(currentStep)
+        
+        // if (currentStep < steps.length - 1) {
+        //     e.preventDefault();
+        //     currentStep++;
+        //     showStep(currentStep);
+        // }
+    });
+
+
+backBtns.addEventListener("click", (e) => {
         if (currentStep > 0) {
             e.preventDefault()
             currentStep--;
             showStep(currentStep);
         }
     });
-});
 
 </script>
 </body>

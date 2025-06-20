@@ -12,7 +12,7 @@
     font-family: "Inter", sans-serif;
     color: var(--text-color);
     scroll-behavior: smooth;
-    scroll-padding: 7rem;
+    /* scroll-padding: 7rem; */
 }
 
 body {
@@ -21,6 +21,10 @@ body {
 
 .header {
    background: url(../Imgs/verticl-lines.png) no-repeat;
+}
+
+.header.nobg {
+   background: #000;
 }
 
 header {
@@ -241,22 +245,71 @@ width: 70%;
     margin: 5em auto 0  auto;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    width: 70%;
+    width: 100%;
     align-items: center;
+    flex-direction:column;
+    animation: appear 2s 2s ease-out forwards;
+    opacity: 0;
+    transition: opacity 2s ease-out;
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+    }
+}
+
+.header .sponsors .scroll{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    gap: var(--gap);
+    padding-bottom: 1.5em;
+    margin-top: 1.5em;
+    --gap: 80px;
+}
+
+.header .sponsors .rightToLeft {
+    white-space:nowrap;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 80px;
+    min-width: 100%;
+    animation: RightToLeft 20s infinite linear;
 }
 
 .header .sponsors p{
  color: #fff;
  text-align: center;
  margin:auto;
- font-size: 18px;
+ font-size: 20px;
  font-weight: 400;
- margin-bottom: 1.3em;
 }
 
-.header .sponsors img{
+.header .sponsors .scroll .rightToLeft img{
  width: 100%;
+  /* animation: RightToLeft 15s infinite linear; */
+  /* --gap: 30px; */
+
+}
+
+.header .sponsors .scroll .rightToLeft img.stix{
+ max-width: 7%;
+
+}
+
+@keyframes RightToLeft {
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+.scroll:hover .rightToLeft{
+    animation-play-state:paused;
 }
 
 section.about {
@@ -413,9 +466,20 @@ section#services .service div {
     padding: 2em;
     height: 100%;
     position: relative;
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
 }
-section#services .service div:hover img.hover-img{
- opacity: 1;
+
+section#services .service div h4,
+section#services .service div p,
+section#services .service div span,
+section#services .service div img {
+ transform: translateZ(20px) !important; 
+}
+
+section#services .service div:hover {
+ /* opacity: 1; */
+ box-shadow: inset 8px 8px 30px rgba(255, 255, 255, 0.3);
 }
 
 section#services .service div img.hover-img{
@@ -462,37 +526,6 @@ section#ecosystem {
    flex-direction: column;
    align-items: center;
 }
-
-/* section#ecosystem div{
- position: relative;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- width: 202px;
-}
-
-section#ecosystem div p {
- color: #cdcdcd;
- font-size: 22px;
- text-align: center;
- margin-top: 1em;
-}
-
-section#ecosystem div.ecosystem1 {
-    left: 30px;
-    top: 380px;
-}
-
-section#ecosystem div.ecosystem2 {
-    left: 42%;
-    top: -120px;
-}
-
-section#ecosystem div.ecosystem3 {
-    left: 83%;
-    top: 20px;
-} */
 
 section#ecosystem div {
  /* margin-top: -300px; */
@@ -575,6 +608,14 @@ section.why .right div {
     box-shadow: inset 3px 3px 20px rgba(255, 255, 255, 0.2);
     padding: 2em 1.5em;
     height: 100%;
+        transform: perspective(1000px);
+    transform-style: preserve-3d;
+}
+
+section.why .right div h4,
+section.why .right div p,
+section.why .right div img {
+ transform: translateZ(20px) !important; 
 }
 
 section.why .right div.card1 {
@@ -582,35 +623,9 @@ section.why .right div.card1 {
  position: relative;
 }
 
-section.why .right div.card1 img.img-hover{
-position: absolute;
-bottom: -8%;
-border-bottom-right-radius: 24px;
-right: 0;
-opacity: 0;
-transition: .5s;
-}
-
-section.why .right div.card1:hover img.img-hover{
-    opacity: 1;
-}
-
 section.why .right div.card2 {
     background: url("../Imgs/Ellipse\ 81\ \(1\).png") no-repeat bottom left;
     position: relative;
-}
-
-section.why .right div.card2 img.img-hover{
-    position: absolute;
-    bottom: -8%;
-    border-bottom-left-radius: 24px;
-    left: 0;
-    opacity: 0;
-    transition: .5s;
-}
-
-section.why .right div.card2:hover img.img-hover{
-opacity: 1;
 }
 
 section.why .right div.card3 {
@@ -618,35 +633,13 @@ section.why .right div.card3 {
     position: relative;
 }
 
-section.why .right div.card3 img.img-hover{
-    position: absolute;
-    top: 0;
-    border-top-right-radius: 24px;
-    right: 0;
-    opacity: 0;
-    transition: .5s;
-}
-
-section.why .right div.card3:hover img.img-hover{
-opacity: 1;
-}
-
 section.why .right div.card4 {
     background: url("../Imgs/Ellipse\ 81\ \(3\).png") no-repeat top left;
     position: relative;
 }
 
-section.why .right div.card4 img.img-hover{
-    position: absolute;
-    top: 0;
-    border-top-left-radius: 24px;
-    left: 0;
-    opacity: 0;
-    transition: .5s;
-}
-
-section.why .right div.card4:hover img.img-hover{
-opacity: 1;
+section.why .right div:hover {
+box-shadow: inset 8px 8px 30px rgba(255, 255, 255, 0.3);
 }
 
 section.why .right div img {
@@ -1258,35 +1251,16 @@ margin-top: -170px;
 width: 100%;
 }
 
-/* @media only screen and (min-height: 992px){
-
-    section.hero h2 {
-    width: 70%;
-}
-
-section.hero p {
-    width: 70%;
-}
-
-section.hero img.curves {
-width: 100%;
-margin-top: -170px;
-}
-
-
-} */
-
 .header .sponsors {
-    margin: 3em auto 0 auto;
+    margin: 5em auto 0 auto;
     width: 100%;
 }
 
 .header .sponsors p{
  text-align: center;
  margin:auto;
- font-size: 12px;
+ font-size: 18px;
  font-weight: 400;
- margin-bottom: 1.3em;
 }
 
 .header .sponsors img{
@@ -1446,6 +1420,15 @@ section#ecosystem {
     
 }
 
+@media only screen and (max-height:700px){
+    
+    section#ecosystem {
+        padding-top: 8.5em;
+        padding-bottom: 13.5em;
+    }
+    
+}
+
 
 section#ecosystem div h3 {
  font-size: 24px;
@@ -1457,21 +1440,6 @@ section#ecosystem div p {
  margin-top: .5em;
  width: 50%;
  font-weight: 300;
-}
-
-section#ecosystem div.ecosystem1 {
-    left: 10px;
-    top: 170px;
-}
-
-section#ecosystem div.ecosystem2 {
-    left: 42%;
-    top: -70px;
-}
-
-section#ecosystem div.ecosystem3 {
-    left: 83%;
-    top: -10px;
 }
 
 section#ecosystem span h3 {
@@ -1702,33 +1670,6 @@ text-align: center;
  margin-top: 0 !important;
 }
 
-section#startup-form div#con {
-    flex-direction: column;
-    gap: 50px;
-}
-
-section#startup-form div#con .text{
- width: 80% !important;
-}
-
-section#startup-form div#con .text h2{
- font-size: 36px;
-}
-
-section#startup-form div#con .form{
- width: 80% !important;
-}
-
-section#startup-form div#con form div.form-details2 div.form-parent{
- display: flex !important;
- width: 100% !important;
- justify-content: space-between;
- flex-direction: column;
- gap: 20px;
-}
-
-
-
 section#team-form div#con {
     flex-direction: column;
     gap: 50px;
@@ -1748,6 +1689,33 @@ section#team-form div#con .form{
 }
 
 section#team-form div#con form div.form-details div.form-parent{
+ display: flex !important;
+ width: 100% !important;
+ justify-content: space-between;
+ flex-direction: column;
+ gap: 20px;
+}
+
+
+section#startup-form div#con {
+    flex-direction: column;
+    gap: 50px;
+}
+
+section#startup-form div#con .text{
+ width: 80% !important;
+}
+
+section#startup-form div#con .text h2{
+ font-size: 36px;
+ width: 100% !important;
+}
+
+section#startup-form div#con .form{
+ width: 80% !important;
+}
+
+section#startup-form div#con form div.form-parent{
  display: flex !important;
  width: 100% !important;
  justify-content: space-between;
@@ -1778,6 +1746,10 @@ section.hero p {
 section.hero img.curves {
 margin-top: -80px;
 width: 130%;
+}
+
+.header .sponsors p{
+ font-size: 14px;
 }
 
     section.about {
@@ -1814,22 +1786,20 @@ width: 130%;
     padding: 0 2em;
 }
 
-/* @media only screen and (min-height:1023px){
-    
-    section#ecosystem {
-        padding-top: 8.5em;
-        padding-bottom: 13.5em;
-    }
-    
-} */
-
+section#ecosystem {
+    margin-top: 8em;
+    background: url("../Imgs/eco-mobile.png") no-repeat;
+    background-size: 100%;
+    padding-top: 7.5em;
+    padding-bottom: 6em;
+}
 
 section#ecosystem div h3 {
  font-size: 14px;
 }
 
 section#ecosystem div p {
- font-size: 10px;
+ font-size: 12px;
 }
 
 section.question {
@@ -1918,33 +1888,6 @@ section div#contact-us .text p{
  width: 100% !important;
 }
 
-section#startup-form {
-    width: 100%;
-    margin:auto;
-}
-
-section#startup-form div#con {
-    flex-direction: column;
-    gap: 30px;
-}
-
-section#startup-form div#con .text{
- width: 99% !important;
-}
-
-section#startup-form div#con .text h2{
- font-size: 30px !important;
-}
-
-section#startup-form div#con .form{
- width: 100% !important;
-}
-
-section#startup-form div#con .form form{
-    border: none;
-    padding: 0;
-    width: 100% !important;
-}
 
 section#team-form div#con .text{
  width: 100% !important;
@@ -1979,6 +1922,42 @@ section#team-form div#con .form .indicator{
 }
 
 section#team-form div#con .form .indicator div span{
+ display: none;
+}
+
+section#startup-form div#con .text{
+ width: 100% !important;
+}
+
+section#startup-form div#con .text h2{
+ font-size: 36px;
+ width: 100% !important;
+}
+
+section#startup-form div#con .text p{
+ font-weight: 200;
+ color: #cdcdcd;
+ margin-top: 0.5em;
+ margin-bottom: 0.5em;
+ font-size: 14px;
+ width: 100% ;
+}
+    
+    section#startup-form div#con .form{
+        border: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+}
+
+section#startup-form div#con form div.form-details2 div.form-parent{
+  flex-direction: column !important;
+}
+
+section#startup-form div#con .form .indicator{
+ width: 100% !important;
+}
+
+section#startup-form div#con .form .indicator div span{
  display: none;
 }
 
@@ -2303,186 +2282,9 @@ section div#contact-us form button.continue{
 }
 
 
-button.continue:hover{
-  background:rgba(185, 255, 234, 0.5);
+button.continue:hover {
+    background:rgba(185, 255, 234, 0.5) !important;
 }
-
-section#startup-form {
-    width: 80%;
-    margin:auto;
-}
-
-section#startup-form div#con {
-    margin-top: 3em;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 100%;
-    /* gap: 99px; */
-}
-
-section#startup-form div#con .text{
- width: 10%;
-}
-
-section#startup-form div#con .text h2{
- font-size: 36px;
-}
-
-section#startup-form div#con .form{
- width: 60%;
-}
-
-section#startup-form div#con form{
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 2em;
-}
-
-section#startup-form div#con form div.form-details{
-    /* opacity: 0; */
-    display: none;
-}
-
-section#startup-form div#con form div.form-details2{
-    /* opacity: 0; */
-    display: none;
-}
-
-section#startup-form div#con form div.form-details3{
-    /* opacity: 0; */
-    display: none;
-}
-
-
-section#startup-form div#con form div.form-details2 div.form-parent{
- display: flex !important;
- width: 100% !important;
- justify-content: space-between;
- gap: 20px;
-}
-
-section#startup-form div#con form div.form-details2 div.form-parent div{
- width: 100% !important;
-}
-
-section#startup-form div#con form .indicator{
- display: flex;
- justify-content: space-between;
- align-items: center;
- border-bottom: 2px solid #777;
- padding-bottom: 1em;
- margin-bottom: 3em;
- width: 90%;
-}
-
-section#startup-form div#con form .indicator .no1,
-section#startup-form div#con form .indicator .no2,
-section#startup-form div#con form .indicator .no3{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-}
-
-section#startup-form div#con form .indicator .no1 p,
-section#startup-form div#con form .indicator .no2 p,
-section#startup-form div#con form .indicator .no3 p{
-    font-size: 13px;
-    color: #cdcdcd;
-}
-
-section#startup-form div#con form .indicator .no1 .no,
-section#startup-form div#con form .indicator .no2 .no,
-section#startup-form div#con form .indicator .no3 .no{
- background: #adadad;
- border-radius: 50%;
- color: #fff;
- /* width: 20px;
- height: 20px; */
- padding: .3em .6em;
-}
-
-section#startup-form div#con form label{
- color: #cdcdcd;
- font-weight: 400;
- font-size: 14px;
-}
-
-section#startup-form div#con form input{
-    padding: .8em 2em .8em .8em;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color:#0F0F0F;
-    margin-top: 0.5em;
-    width: 100%;
-    height: 40px;
-    margin-top:1.5em;
-}
-
-section#startup-form div#con form select{
-    padding: .8em 3em .8em .8em;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color:#0F0F0F;
-    margin-top: 0.5em;
-    width: 100%;
-    height: 40px;
-    margin-bottom:1.5em;
-}
-
-section#startup-form div#con form textarea{
-    padding: .8em 3em .8em .8em;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color:#0F0F0F;
-    margin-top: 0.5em;
-    width: 100%;
-    height: 90px;
-    margin-bottom:1.5em;
-}
-
-section#startup-form div#con form .buttons {
- margin-top: 3em;
- display: flex;
- justify-content: space-between;
- align-items: center;
- width: 100% !important;
- padding: 0;
-}
-
-section#startup-form div#con form button.back{
- background: none;
- border: none;
- outline: none;
- cursor: pointer;
- text-transform: uppercase;
-}
-section#startup-form div#con form button.continue{
- color: #000;
- text-align: center;
- padding: .8em 2em;
- border-radius: 30px;
- font-weight: bold;
- font-size: 12px;
- background: #fff;
- color: #000;
- text-decoration: none;
- transition: .5s;
- margin-top: 1em;
- border: none;
- outline: none;
- cursor: pointer;
-}
-
-
-section#startup-form .continue:hover{
-  background:rgba(185, 255, 234, 0.5);
-}
-
 
 section#team-form {
     width: 80%;
@@ -2522,7 +2324,7 @@ section#team-form div#con .form{
  padding: 2em;
 }
 
-section#team-form div#con form.form-step{
+section#team-form div#con div.form-step{
  display: none;
 }
 
@@ -2533,7 +2335,7 @@ section#team-form div#con form.form-step{
  margin: 500px; */
 }
 
-section#team-form div#con form.form-step.active{
+section#team-form div#con div.form-step.active{
  display: block;
 }
 
@@ -2654,6 +2456,7 @@ section#team-form div#con form button.back{
  background: none;
  border: none;
  outline: none;
+ display: none;
  cursor: pointer;
  text-transform: uppercase;
 }
@@ -2677,4 +2480,213 @@ section#team-form div#con form button.continue{
 
 section#team-form .continue:hover{
   background:rgba(185, 255, 234, 0.5);
+}
+
+
+section#startup-form {
+    width: 80%;
+    margin:auto;
+}
+
+section#startup-form div#con {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    /* gap: 99px; */
+}
+
+section#startup-form div#con .text{
+ width: 30%;
+}
+
+section#startup-form div#con .text h2{
+ font-size: 36px;
+ width: 50%;
+}
+
+section#startup-form div#con .text p{
+ font-weight: 200;
+ color: #cdcdcd;
+ margin-top: 0.5em;
+ margin-bottom: 0.5em;
+ font-size: 14px;
+}
+
+section#startup-form div#con .form{
+ width: 60%;
+ border: 1px solid #333;
+ border-radius: 20px;
+ padding: 2em;
+}
+
+section#startup-form div#con div.form-step{
+ display: none;
+}
+
+section#startup-form div#con div.form-step.active{
+ display: block;
+}
+
+section#startup-form div#con form div.form-details div.form-parent{
+ display: flex;
+  width: 100% !important;
+ justify-content: space-between;
+ gap: 20px;
+}
+
+section#startup-form div#con form div.form-details div.form-parent div{
+ width: 100% !important;
+}
+
+
+section#startup-form div#con form div.form-details2 div.form-parent{
+ display: flex !important;
+ width: 100% !important;
+ justify-content: space-between;
+ gap: 20px;
+}
+
+section#startup-form div#con form div.form-details2 div.form-parent div{
+ width: 100% !important;
+}
+
+section#startup-form div#con .form .indicator{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid #777;
+ padding-bottom: 1em;
+ margin-bottom: 3em;
+ width: 90%;
+}
+
+section#startup-form div#con .form .indicator .no1,
+section#startup-form div#con .form .indicator .no2,
+section#startup-form div#con .form .indicator .no3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+section#startup-form div#con .form .indicator .no1 p,
+section#startup-form div#con .form .indicator .no2 p,
+section#startup-form div#con .form .indicator .no3 p{
+    font-size: 12px;
+    color: #cdcdcd;
+}
+
+section#startup-form div#con .form .indicator .no{
+ border-radius: 50%;
+ color: #fff;
+ /* width: 20px;
+ height: 20px; */
+ padding: .3em .6em;
+}
+
+section#startup-form div#con .form .indicator .no.active{
+background-color:#fff;
+color: #000;
+}
+
+section#startup-form div#con form label{
+ color: #cdcdcd;
+ font-weight: 400;
+ font-size: 14px;
+}
+
+section#startup-form div#con form input{
+    padding: .8em 2em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 40px;
+    margin-bottom:1.5em;
+}
+
+section#startup-form div#con form select{
+    padding: .8em 3em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 40px;
+    margin-bottom:1.5em;
+}
+
+section#startup-form div#con form textarea{
+    padding: .8em 3em .8em .8em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color:#0F0F0F;
+    margin-top: 0.5em;
+    width: 100%;
+    height: 90px;
+    margin-bottom:1.5em;
+}
+
+section#startup-form div#con .form .buttons {
+ margin-top: 3em;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100% !important;
+ padding: 0;
+}
+
+section#startup-form div#con .form button.back{
+ background: none;
+ border: none;
+ outline: none;
+ display: none;
+ cursor: pointer;
+ text-transform: uppercase;
+}
+section#startup-form div#con .form button.continue{
+ color: #000;
+ text-align: center;
+ padding: .8em 2em;
+ border-radius: 30px;
+ font-weight: bold;
+ font-size: 12px;
+ background: #fff;
+ color: #000;
+ text-decoration: none;
+ transition: .5s;
+ margin-top: 1em;
+ border: none;
+ outline: none;
+ cursor: pointer;
+}
+
+
+section#startup-form .continue:hover{
+  background:rgba(185, 255, 234, 0.5);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal:nth-child(1){
+   transition-delay: 0s;
+}
+
+.reveal:nth-child(2){
+   transition-delay: 0.3s;
 }
