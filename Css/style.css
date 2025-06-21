@@ -809,15 +809,17 @@ section.question p {
   justify-content: center;
    text-align: center;
    text-decoration: none;
+   z-index: 20;
 }
 
-  section.question a:hover {
-  animation: jello-horizontal 0.9s both;
+section.question a:hover {
+    animation: jello-horizontal 0.9s both;
 }
 section.question img {
- position:absolute;
- margin:0;
- overflow: hidden;
+    position:absolute;
+    margin:0;
+    overflow: hidden;
+    z-index: -2;
 }
 
 section.question img.top-left {
@@ -2533,25 +2535,27 @@ section div#contact-us form button.cancel{
  cursor: pointer;
 }
 section div#contact-us form button.continue{
- color: #000;
- text-align: center;
- padding: .8em 2em;
- border-radius: 30px;
- font-weight: bold;
- font-size: 12px;
- background: #fff;
- color: #000;
- text-decoration: none;
- transition: .5s;
- margin-top: 1em;
- border: none;
- outline: none;
- cursor: pointer;
+      font-weight: bold;
+     width: fit-content;
+  padding: .8em 2em;
+  border-radius: 32px;
+  border: none;
+  background-color: #fff;
+  font-family: inherit;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   text-align: center;
+   text-decoration: none;
+   z-index: 20;
+   margin-top: 1em;
+   font-size: 12px;
 }
 
-
-button.continue:hover {
-    background:rgba(185, 255, 234, 0.5) !important;
+section div#contact-us form button.continue:hover {
+    animation: jello-horizontal 0.9s both;
 }
 
 section#team-form {
@@ -2729,25 +2733,27 @@ section#team-form div#con form button.back{
  text-transform: uppercase;
 }
 section#team-form div#con form button.continue{
- color: #000;
- text-align: center;
- padding: .8em 2em;
- border-radius: 30px;
- font-weight: bold;
- font-size: 12px;
- background: #fff;
- color: #000;
- text-decoration: none;
- transition: .5s;
- margin-top: 1em;
- border: none;
- outline: none;
- cursor: pointer;
+      font-weight: bold;
+     width: fit-content;
+  padding: .8em 2em;
+  border-radius: 32px;
+  border: none;
+  background-color: #fff;
+  font-family: inherit;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+   text-align: center;
+   text-decoration: none;
+   z-index: 20;
+   margin-top: 1em;
 }
 
-
-section#team-form .continue:hover{
-  background:rgba(185, 255, 234, 0.5);
+section#team-form div#con button.continue:hover {
+    animation: jello-horizontal 0.9s both;
 }
 
 
@@ -2918,29 +2924,32 @@ section#startup-form div#con .form button.back{
  cursor: pointer;
  text-transform: uppercase;
 }
+
 section#startup-form div#con .form button.continue{
- color: #000;
- text-align: center;
- padding: .8em 2em;
- border-radius: 30px;
- font-weight: bold;
- font-size: 12px;
- background: #fff;
- color: #000;
- text-decoration: none;
- transition: .5s;
- margin-top: 1em;
- border: none;
- outline: none;
- cursor: pointer;
+      font-weight: bold;
+     width: fit-content;
+  padding: .8em 2em;
+  border-radius: 32px;
+  border: none;
+  background-color: #fff;
+  font-family: inherit;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+   text-align: center;
+   text-decoration: none;
+   z-index: 20;
+   margin-top: 1em;
 }
 
-
-section#startup-form .continue:hover{
-  background:rgba(185, 255, 234, 0.5);
+section#startup-form div#con button.continue:hover {
+    animation: jello-horizontal 0.9s both;
 }
 
-.reveal {
+/* .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.9s ease, transform 0.9s ease;
@@ -2957,4 +2966,4 @@ section#startup-form .continue:hover{
 
 .reveal:nth-child(2){
    transition-delay: 0.3s;
-}
+} */
