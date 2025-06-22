@@ -1619,32 +1619,9 @@ section#testimonials p.title {
     width: 55%;
 }
 
-/* .swiper {
-  width: 100%;
-  height: 300px;
-} */
-
-/* section#testimonials .swiper .swiper-wrapper {
-   flex-direction: column;
-   margin: 3.5em auto;
-   gap: 30px;
-   width: 70%;
-} */
-
-section#testimonials .swiper .swiper-wrapper div.card1,
-section#testimonials .swiper .swiper-wrapper div.card2, 
-section#testimonials .swiper .swiper-wrapper div.card3,
-section#testimonials .swiper .swiper-wrapper div.card4
-{
-    background: url("../Imgs/Ellipse\ 61.png") repeat;
-    border-radius: 24px;
-    padding: 1.5em;
-}
-
 section.question {
  margin:auto;
  padding: 7em 3em;
- /* width: 60%; */
  background-size: cover;
  position: relative;
 }
@@ -1776,7 +1753,7 @@ div.con section#team .cards{
    margin-bottom: 0;
    margin-left: auto;
    margin-right: auto;
-   gap: 70px;
+   gap: 70px !important;
    width: 50% !important;
 }
 
@@ -2290,7 +2267,8 @@ about page
 }
 
 .wrapper section{
- height: 100vh;
+ /* height: 70vh; */
+ margin-top: 5em;
 }
 
 .wrapper .side-bar{
@@ -2393,6 +2371,7 @@ line-height: 2;
 
 div.con section#team{
  height: 100%;
+ /* margin-top: 5em; */
 }
 
 div.con section#team h3{
@@ -2413,6 +2392,7 @@ div.con section#team .cards{
    align-items: center;
    margin-top: 5em;
    margin-bottom: 5em;
+   gap: 9px;
 }
 
 div.con section#team .cards div  {
@@ -2465,7 +2445,7 @@ text-align: center;
 
 
  a.join:hover{
-  background:rgba(185, 255, 234, 0.5);
+ animation: jello-horizontal 0.9s both;
 }
 
 

@@ -53,11 +53,11 @@
 <div class="wrapper">
 
 <div class="side-bar">
-<a href="#about">About</a>
-<a href="#the-goal">The Goal</a>
-<a href="#the-approach">The Approach</a>
-<a href="#why-approach">Why This Approach</a>
-<a href="#team">Meet Our Team</a>
+<a class="highlight" href="#about">About</a>
+<a class="highlight" href="#the-goal">The Goal</a>
+<a class="highlight" href="#the-approach">The Approach</a>
+<a class="highlight" href="#why-approach">Why This Approach</a>
+<a class="highlight" href="#team">Meet Our Team</a>
 </div>
 
 <div class="con">
@@ -125,7 +125,7 @@ Seasoned experts united by a shared vision of Web3's transformative potential.
 </div>
 </div>
 </section>
-<a href="" class="join">
+<a href="./Startup.html" class="join">
 Join Our Journey
 </a>
 </div>
@@ -157,10 +157,12 @@ menuToggle.onclick = function() {
 }
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".side-bar a");
+const navLinks = document.querySelectorAll(".highlight");
 
 const observer = new IntersectionObserver((entries) => {
- entries.forEach((entry) => {
+
+  entries.forEach((entry) => {
+
   if (entry.isIntersecting) {
     navLinks.forEach((link) => {
       link.classList.toggle("scrollspy", 
@@ -170,9 +172,14 @@ const observer = new IntersectionObserver((entries) => {
   );
   }
  })
- threshold: 0.8
-
-});
+ 
+},
+{
+  root: null,
+  threshold: 
+  0.8,
+}
+);
 
 sections.forEach((section) => {
   observer.observe(section);
