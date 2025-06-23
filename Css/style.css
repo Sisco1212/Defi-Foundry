@@ -89,7 +89,7 @@ header nav ul.nav-links li a{
 header nav ul.nav-links li a::after {
  content: '';
  display: block;
- background: rgba(185, 255, 234, 0.5);
+ background: #fff;
  height: 3px;
  border-radius: 2px;
  transform: scaleX(0);
@@ -98,10 +98,10 @@ header nav ul.nav-links li a::after {
 }
 
 header nav ul.nav-links li a:hover {
- color: rgba(185, 255, 234, 0.5); 
+ text-shadow: 1px 1px 8px #fff; 
 }
 header nav ul.nav-links li a:hover::after {
- color: rgba(185, 255, 234, 0.5); 
+ color: #fff; 
  transform-origin: right;
  transform: scaleX(1);
 }
@@ -121,6 +121,10 @@ header nav a.joinus {
     color: #000;
     transition: .5s;
     animation-delay: .9s;
+}
+
+header nav a.joinus:hover {
+ box-shadow: 1px 1px 8px #fff;
 }
  a.logo,
  ul.nav-links,
@@ -214,42 +218,12 @@ section.hero a.apply {
   align-items: center;
   justify-content: center;
    text-align: center;
+   transition: .5s;
 }
 
 .btn-6:hover {
-  animation: jello-horizontal 0.9s both;
+    box-shadow: 1px 1px 8px #fff;
 }
-
-@keyframes jello-horizontal {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  100% {
-    transform: scale3d(1, 1, 1);
-  }
-}
-
 
 section.hero img.curves {
 margin-top: -18%;
@@ -482,30 +456,11 @@ section#services .service div {
     padding: 2em;
     height: 100%;
     position: relative;
-    transform: perspective(1000px);
-    transform-style: preserve-3d;
+    transition: .5s;
 }
-
-section#services .service div h4,
-section#services .service div p,
-section#services .service div span,
-section#services .service div img {
- transform: translateZ(20px) !important; 
-}
-
 section#services .service div:hover {
  /* opacity: 1; */
  box-shadow: inset 8px 8px 30px rgba(255, 255, 255, 0.5);
-}
-
-section#services .service div img.hover-img{
-position:absolute;
-transform: rotateY(180deg);
-bottom: 0;
-right: 0;
-border-bottom-left-radius: 24px;
-opacity: 0;
-    transition: .5s;
 }
 
 section#services .service div .img-con {
@@ -608,10 +563,11 @@ section.why .left a.get-started{
   justify-content: center;
    text-align: center;
    text-decoration: none;
+   transition: .5s;
 }
 
 section.why .left a.get-started:hover {
-  animation: jello-horizontal 0.9s both;
+    box-shadow: 1px 1px 8px #fff;
 }
 
 section.why .right {
@@ -630,8 +586,7 @@ section.why .right div {
     box-shadow: inset 3px 3px 20px rgba(255, 255, 255, 0.2);
     padding: 2em 1.5em;
     height: 100%;
-        transform: perspective(1000px);
-    transform-style: preserve-3d;
+    transition: .5s;
 }
 
 section.why .right div h4,
@@ -824,10 +779,11 @@ section.question p {
    text-align: center;
    text-decoration: none;
    z-index: 20;
+   transition: .5s !important;
 }
 
 section.question a:hover {
-    animation: jello-horizontal 0.9s both;
+    box-shadow: 1px 1px 8px #fff;
 }
 section.question img {
     position:absolute;
@@ -867,7 +823,7 @@ footer {
     padding-bottom: 2em;
 }
 
-footer a {
+footer ul li a {
     color: var(--text-color);
     text-decoration: none;
         font-size:12px;
@@ -875,10 +831,10 @@ footer a {
     transition: .5s;
 }
 
-footer a::after {
+footer ul li a::after {
  content: '';
  display: block;
- background: rgba(185, 255, 234, 0.5);
+ background: #fff;
  height: 3px;
  border-radius: 2px;
  transform: scaleX(0);
@@ -886,11 +842,11 @@ footer a::after {
  transition: transform 0.3s;
 }
 
-footer a:hover {
- color: rgba(185, 255, 234, 0.5); 
+footer ul li a:hover {
+ text-shadow: 1px 1px 8px #fff; 
 }
-footer a:hover::after {
- color: rgba(185, 255, 234, 0.5); 
+footer ul li a:hover::after {
+ color: #fff; 
  transform-origin: right;
  transform: scaleX(1);
 }
@@ -902,6 +858,7 @@ footer div.logo a {
     gap: 9px;
     text-transform: uppercase;
     margin-bottom: 1em;
+    text-decoration: none;
 }
 
 footer div.logo a h2 {
@@ -911,9 +868,13 @@ footer div.logo a h2 {
 footer p.title {
     color: #cdcdcd;
     font-size: 16px;
-    width: 50%;
+    width: 20% !important;
     text-align: center;
     margin:auto;
+}
+
+footer div p.title {
+    width: 70% !important;
 }
 
 footer ul {
@@ -950,6 +911,14 @@ footer div.footer-bottom div.center {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+}
+
+footer div.footer-bottom div.center a img{
+ transition: .5s;
+}
+
+footer div.footer-bottom div.center a:hover img{
+ scale:1.1 ;
 }
 
 footer div.footer-bottom div.right {
@@ -1264,14 +1233,6 @@ section div#contact-us .text p{
     transition: .5s;
     animation-delay: .9s;
 }
-
-header .mobile-menu ul  a.joinus:hover {
-    /* background:rgba(185, 255, 234, 0.5);
-    font-size: 15px;
-    color: #000; */
-    /* animation: jello-horizontal 0.9s both; */
-}
-
     .mobile-nav {
         display: flex;
     }
@@ -2441,11 +2402,12 @@ text-align: center;
  margin:auto;
  transition: .5s;
  margin-top: 1em;
+ transition: .5s;
 }
 
 
  a.join:hover{
- animation: jello-horizontal 0.9s both;
+    box-shadow: 1px 1px 8px #fff;
 }
 
 
@@ -2569,10 +2531,11 @@ section div#contact-us form button.continue{
    z-index: 20;
    margin-top: 1em;
    font-size: 12px;
+   transition: .5s;
 }
 
 section div#contact-us form button.continue:hover {
-    animation: jello-horizontal 0.9s both;
+    box-shadow: 1px 1px 8px #fff;
 }
 
 section#team-form {
@@ -2764,10 +2727,11 @@ section#team-form div#con form button.continue{
    text-decoration: none;
    z-index: 20;
    margin-top: 1em;
+   transition: .5s;
 }
 
 section#team-form div#con button.continue:hover {
-    animation: jello-horizontal 0.9s both;
+    box-shadow: 1px 1px 8px #fff;
 }
 
 
@@ -2957,27 +2921,9 @@ section#startup-form div#con .form button.continue{
    text-decoration: none;
    z-index: 20;
    margin-top: 1em;
+   transition: .5s;
 }
 
 section#startup-form div#con button.continue:hover {
-    animation: jello-horizontal 0.9s both;
+    box-shadow: 1px 1px 8px #fff;
 }
-
-/* .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.reveal.active{
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal:nth-child(1){
-   transition-delay: 0s;
-}
-
-.reveal:nth-child(2){
-   transition-delay: 0.3s;
-} */

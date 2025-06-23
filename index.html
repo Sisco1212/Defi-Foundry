@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defi-Foundry</title>
     <link rel="stylesheet" href="../Css/style.css">
-      <link
-    rel="stylesheet"
-  />
   <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -61,31 +58,6 @@ Fueling the next wave of Web3 innovation
 <p>
 Empowering early-stage crypto startups with market-making, fundraising, and branding, backed by a thriving web3 community..
 </p>
-<!-- <a href="/Html/Startup.html" class="apply"> Apply as a Startup</a> -->
-           <!-- <a href="./Html/Startup.html"><button class="btn-1">
-             <div class="original">Apply as a Startup</div>
-            <div class="letters">
-              <span>A</span>
-              <span>p</span>
-              <span>p</span>
-              <span>l</span>
-              <span>y</span>
-              <span style="margin-right: 0.5em;"></span>
-              <span>a</span>
-              <span>s</span>
-              <span style="margin-right: 0.5em;"></span>
-              <span>a</span>
-              <span style="margin-right: 0.5em;"></span>
-              <span>S</span>
-              <span>t</span>
-              <span>a</span>
-              <span>r</span>
-              <span>t</span>
-              <span>u</span>
-              <span>p</span>
-            </div>
-          </button>
-        </a> -->
 
        <a href="/Html/Startup.html" class="apply"> <button class="btn-6">Apply as a Startup</button></a>
 <img src="../Imgs/curves.png" class="curves" alt="">
@@ -210,7 +182,7 @@ Get Started
 </div>
 </section>
 
-<section id="testimonials" data-aos="fade-up" data-aos-duration="1000">
+<!-- <section id="testimonials" data-aos="fade-up" data-aos-duration="1000">
 <h2 data-aos="fade-up" data-aos-duration="1000">Our Testimonials</h2>
 <p class="title" data-aos="fade-up" data-aos-duration="1000">See how real projects went from idea to momentum with our full-stack execution and guidance</p>
 
@@ -253,11 +225,10 @@ Get Started
     
   </div>
   <div class="swiper-pagination"></div>
-
-  <!-- <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div> -->
+ <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
-</section>
+</section> -->
 
 <section class="question" data-aos="fade-up" data-aos-duration="1000">
 <img class="top-left" src="../Imgs/glowing-line.png" alt="" data-aos="fade-up"  data-aos-duration="1000" data-aos-delay="300">
@@ -284,7 +255,6 @@ Ready to Scale Web3 with Confidence?
 <p class="title">Empower Your Crypto Project With The Support To Scale Faster</p>
 </div>
 <ul data-aos="fade-up"  data-aos-duration="1000">
-<li class="benefits" data-aos="fade-up"  data-aos-duration="1000"><a href="">Benefits</a></li>
 <li><a href="/Html/About.html" data-aos="fade-up"  data-aos-duration="1000">About</a></li>
 <li><a href="index.html#testimonials" data-aos="fade-up"  data-aos-duration="1000">Testimonials</a></li>
 <li><a href="" data-aos="fade-up"  data-aos-duration="1000">FAQs</a></li>
@@ -296,8 +266,12 @@ Ready to Scale Web3 with Confidence?
 <div class="footer-bottom">
 <div class="left"><p> © DefiFoundry 2025. All rights reserved </p></div>
 <div class="center">
-<img src="Imgs/X.png" alt="">
-<img src="Imgs/Telegrm.png" alt="">
+<a href="https://x.com/DefiFoundry">
+  <img src="Imgs/X.png" alt="">
+</a>
+<a href="https://t.me/+Gb-Z6xLUZQplOTc8">
+  <img src="Imgs/Telegrm.png" alt="">
+</a>
 </div>
 <div class="right">
 <p>Terms of Service</p>
@@ -308,7 +282,6 @@ Ready to Scale Web3 with Confidence?
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script type="text/javascript" src="./Js/vanilla-tilt.js"></script>
 
 
 <script>
@@ -329,11 +302,19 @@ else
 });
 
 let menuToggle = document.querySelector(".mobile-nav");
+let menuToggleLinks = document.querySelectorAll(".mobile-menu ul li a");
 let nav = document.querySelector(".mobile-menu");
 menuToggle.onclick = function() {
   menuToggle.classList.toggle("active");
   nav.classList.toggle("show");
 }
+
+menuToggleLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.toggle("active");
+    nav.classList.toggle("show");
+  })
+})
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -355,11 +336,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
   AOS.init();
-
-  	VanillaTilt.init(document.querySelectorAll(".service div, .right div"), {
-		max: 25,
-		speed: 400,
-	});
 
 
     new Swiper('.swiper', {
@@ -403,15 +379,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
-
-<!-- <script src="Js/scroll-out.js"></script>
-<script type="text/javascript">
-    ScrollOut({
-        targets: 'img, h2, p'
-    })
-</script> -->
-
-<!-- <script>
-</script> -->
 </body>
 </html>

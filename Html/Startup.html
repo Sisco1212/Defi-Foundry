@@ -18,7 +18,7 @@
 <div class="header">
 <header>
 <nav class="nav">
-<a class="logo" href="index.html">
+<a class="logo" href="../index.html">
 <img src="../Imgs/Logo.png" alt="">
 <div class="logo-text">
 <h3>DEFI</h3>
@@ -42,9 +42,9 @@
 
 <div class="mobile-menu">
     <ul class="links">
-    <li><a href="index.html" class="">Home</a></li>
+    <li><a href="../index.html" class="">Home</a></li>
     <li><a href="/Html/About.html" class="about">About Us</a></li>
-    <li><a href="#services" class="services">Services</a></li>
+    <li><a href="../index.html#services" class="services">Services</a></li>
     <li><a href="/Html/Contact.html" class="contact">Contact</a></li>
     <a href="/Html/Team.html" class="joinus"> Join Us</a>
   </ul>
@@ -302,9 +302,10 @@
     <br>
     <select name="hear" id="hear" required>
     <option value="">Select an option</option>
+    <option value="X">X (formerly Twitter)</option>
     <option value="Facebook">Facebook</option>
-    <option value="X">X</option>
-    <option value="Discord">Discord</option>
+    <option value="LinkedIn">LinkedIn</option>
+    <option value="Others">Others</option>
     </select>
 </div>
 
@@ -341,8 +342,12 @@
 <div class="footer-bottom">
 <div class="left"><p> © DefiFoundry 2025. All rights reserved </p></div>
 <div class="center">
-<img src="../Imgs/X.png" alt="">
-<img src="../Imgs/Telegrm.png" alt="">
+<a href="https://x.com/DefiFoundry">
+  <img src="../Imgs/X.png" alt="">
+</a>
+<a href="https://t.me/+Gb-Z6xLUZQplOTc8">
+  <img src="../Imgs/Telegrm.png" alt="">
+</a>
 </div>
 <div class="right">
 <p>Terms of Service</p>
@@ -369,11 +374,19 @@ else
 });
 
 let menuToggle = document.querySelector(".mobile-nav");
+let menuToggleLinks = document.querySelectorAll(".mobile-menu ul li a");
 let nav = document.querySelector(".mobile-menu");
 menuToggle.onclick = function() {
   menuToggle.classList.toggle("active");
   nav.classList.toggle("show");
 }
+
+menuToggleLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.toggle("active");
+    nav.classList.toggle("show");
+  })
+})
 
 const steps = document.querySelectorAll(".form-step");
 const indicators = document.querySelectorAll(".no");
@@ -422,12 +435,6 @@ function showStep(index) {
 
         currentStep++;
         showStep(currentStep)
-        
-        // if (currentStep < steps.length - 1) {
-        //     e.preventDefault();
-        //     currentStep++;
-        //     showStep(currentStep);
-        // }
     });
 
 

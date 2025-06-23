@@ -18,7 +18,7 @@
 <div class="header">
 <header>
 <nav class="nav">
-<a class="logo" href="index.html">
+<a class="logo" href="../index.html">
 <img src="../Imgs/Logo.png" alt="">
 <div class="logo-text">
 <h3>DEFI</h3>
@@ -105,11 +105,43 @@
     <br>
     <select name="location" id="location" required>
     <option value="">Select an option</option>
-    <option value="Lagos">Lagos</option>
-    <option value="Port Harcourt">Port Harcourt</option>
-    <option value="Kwara">Kwara</option>
+    <option value="Abia">Abia</option>
+    <option value="Adamawa">Adamawa</option>
+    <option value="AkwaIbom">Akwa Ibom</option>
+    <option value="Anambra">Anambra</option>
+    <option value="Bauchi">Bauchi</option>
+    <option value="Bayelsa">Bayelsa</option>
+    <option value="Benue">Benue</option>
+    <option value="Borno">Borno</option>
+    <option value="CrossRiver">Cross River</option>
+    <option value="Delta">Delta</option>
+    <option value="Ebonyi">Ebonyi</option>
+    <option value="Edo">Edo</option>
     <option value="Ekiti">Ekiti</option>
+    <option value="Enugu">Enugu</option>
+    <option value="Gombe">Gombe</option>
+    <option value="Imo">Imo</option>
+    <option value="Jigawa">Jigawa</option>
+    <option value="Kaduna">Kaduna</option>
+    <option value="Kano">Kano</option>
+    <option value="Kastina">Kastina</option>
     <option value="Kebbi">Kebbi</option>
+    <option value="Kogi">Kogi</option>
+    <option value="Kwara">Kwara</option>
+    <option value="Lagos">Lagos</option>
+    <option value="Nassarawa">Nassarawa</option>
+    <option value="Niger">Niger</option>
+    <option value="Ogun">Ogun</option>
+    <option value="Ondo">Ondo</option>
+    <option value="Osun">Osun</option>
+    <option value="Oyo">Oyo</option>
+    <option value="Plateau">Plateau</option>
+    <option value="Rivers">Rivers</option>
+    <option value="Sokoto">Sokoto</option>
+    <option value="Taraba">Taraba</option>
+    <option value="Yobe">Yobe</option>
+    <option value="Zamfara">Zamfara</option>
+    <option value="Abuja">Abuja</option>
 </select>
 </div>
 </div>
@@ -149,11 +181,10 @@
     <br>
     <select name="role" id="role" required>
     <option value="">Select an option</option>
-    <option value="Role1">Role</option>
-    <option value="Role2">Role2</option>
-    <option value="Role3">Role3</option>
-    <option value="Role4">Role4</option>
-    <option value="Role5">Role5</option>
+    <option value="GraphicDesigner">Graphic Designer</option>
+    <option value="ContentCreator">Content Creator</option>
+    <option value="Analyst">Analyst</option>
+    <option value="Researcher">Researcher</option>
     </select>
 </div>
 
@@ -175,11 +206,11 @@
     <br>
     <select name="duration" id="duration" required>
     <option value="">Select an option</option>
-    <option value="1 Year">1 Year</option>
-    <option value="2 Years">2 Years</option>
-    <option value="3 Years">3 Years</option>
-    <option value="4 Years">4 Years</option>
-    <option value="5 Years">5 Years</option>
+    <option value="1Year">1 Year</option>
+    <option value="2Years">2 Years</option>
+    <option value="3Years">3 Years</option>
+    <option value="4Years">4 Years</option>
+    <option value="5Years">5 Years</option>
 </select>
 </div>
 </div>
@@ -241,8 +272,12 @@
 <div class="footer-bottom">
 <div class="left"><p> © DefiFoundry 2025. All rights reserved </p></div>
 <div class="center">
-<img src="../Imgs/X.png" alt="">
-<img src="../Imgs/Telegrm.png" alt="">
+<a href="https://x.com/DefiFoundry">
+  <img src="../Imgs/X.png" alt="">
+</a>
+<a href="https://t.me/+Gb-Z6xLUZQplOTc8">
+  <img src="../Imgs/Telegrm.png" alt="">
+</a>
 </div>
 <div class="right">
 <p>Terms of Service</p>
@@ -269,11 +304,19 @@ else
 });
 
 let menuToggle = document.querySelector(".mobile-nav");
+let menuToggleLinks = document.querySelectorAll(".mobile-menu ul li a");
 let nav = document.querySelector(".mobile-menu");
 menuToggle.onclick = function() {
   menuToggle.classList.toggle("active");
   nav.classList.toggle("show");
 }
+
+menuToggleLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.toggle("active");
+    nav.classList.toggle("show");
+  })
+})
 
 const steps = document.querySelectorAll(".form-step");
 const indicators = document.querySelectorAll(".no");
@@ -303,7 +346,6 @@ function showStep(index) {
            } 
         });
         if (!allValid) {
-            // currentForm.reportValidity();
             const firstInvalid = requiredInputs.find(input => !input.checkValidity());
             if (firstInvalid) {
                 firstInvalid.reportValidity();
@@ -322,12 +364,6 @@ function showStep(index) {
 
         currentStep++;
         showStep(currentStep)
-        
-        // if (currentStep < steps.length - 1) {
-        //     e.preventDefault();
-        //     currentStep++;
-        //     showStep(currentStep);
-        // }
     });
 
 

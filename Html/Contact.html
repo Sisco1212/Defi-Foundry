@@ -18,7 +18,7 @@
 <div class="header">
 <header>
 <nav class="nav">
-<a class="logo" href="index.html">
+<a class="logo" href="../index.html">
 <img src="../Imgs/Logo.png" alt="">
 <div class="logo-text">
 <h3>DEFI</h3>
@@ -29,7 +29,7 @@
 <ul class="nav-links">
     <li><a href="../index.html" class="home">Home</a></li>
     <li><a href="About.html" class="about">About Us</a></li>
-    <li><a href="#services" class="services">Services</a></li>
+    <li><a href="../index.html#services" class="services">Services</a></li>
     <li><a href="Contact.html" class="contact">Contact</a></li>
 </ul>
 
@@ -42,9 +42,9 @@
 
 <div class="mobile-menu">
   <ul class="links">
-    <li><a href="index.html" class="">Home</a></li>
+    <li><a href="../index.html" class="">Home</a></li>
     <li><a href="/Html/About.html" class="about">About Us</a></li>
-    <li><a href="#services" class="services">Services</a></li>
+    <li><a href="../index.html#services" class="services">Services</a></li>
     <li><a href="/Html/Contact.html" class="contact">Contact</a></li>
     <a href="/Html/Team.html" class="joinus"> Join Us</a>
   </ul>
@@ -57,7 +57,7 @@
 <div class="text">
 <h2>Contact Us</h2>
 <p>Have a question, idea, or opportunity you'd like to explore with us? Whether you're a founder looking for support, a partner ready to collaborate, or simply curious about what we do, we're here to connect. Reach out and let’s start the conversation.</p>
-<a href="" mailto="@defifoundry@gmail.com"> 
+<a href="mailto=:@defifoundry@gmail.com"> 
 @defifoundry@gmail.com
 </a>
 </div>
@@ -68,39 +68,38 @@
 <div>
     <label for="name">Full Name*</label>
     <br>
-    <input name="name" id="name" type="text" placeholder="Enter your name">
+    <input name="name" id="name" type="text" placeholder="Enter your name" required>
 </div>
 <div>
     <label for="company">Company Name*</label>
     <br>
-    <input type="text" name="company" id="company" placeholder="Enter your name">
+    <input type="text" name="company" id="company" placeholder="Enter your name" required>
 </div>
 </div>
 <div class="form-parent snd">
 <div>
     <label for="email">Email address*</label>
     <br>
-    <input type="email" name="email" id="email" placeholder="hello@example.com">
+    <input type="email" name="email" id="email" placeholder="hello@example.com" required>
 </div>
 <div>
     <label for="reason">Reason For Contact*</label>
+
     <br>
-    <select name="reason" id="reason">
-    <option value="Reason1">Reason1</option>
-    <option value="Reason1">Reason3</option>
-    <option value="Reason1">Reason3</option>
-    <option value="Reason1">Reason4</option>
-    <option value="Reason1">Reason5</option>
+    <select name="reason" id="reason" required>
+    <option value="">Select an option</option>
+    <option value="Partnership">Partnership</option>
+    <option value="Enquiry">Enquiry</option>
     </select>
 </div>
 </div>
 <br>
 <label for="message">Message*</label>
 <br>
-<textarea name="message" id="message"></textarea>
+<textarea name="message" id="message" required></textarea>
 
 <div class="buttons">
-<button class="cancel">Cancel</button>
+<span></span>
 <button type="submit" class="continue">Continue</button>
 </div>
 </form>
@@ -125,12 +124,15 @@
 <li><a href="">Whitepaper</a></li>
 </ul>
 
-<!-- <hr> -->
 <div class="footer-bottom">
 <div class="left"><p> © DefiFoundry 2025. All rights reserved </p></div>
 <div class="center">
-<img src="../Imgs/X.png" alt="">
-<img src="../Imgs/Telegrm.png" alt="">
+<a href="https://x.com/DefiFoundry">
+  <img src="../Imgs/X.png" alt="">
+</a>
+<a href="https://t.me/+Gb-Z6xLUZQplOTc8">
+  <img src="../Imgs/Telegrm.png" alt="">
+</a>
 </div>
 <div class="right">
 <p>Terms of Service</p>
@@ -157,11 +159,19 @@ else
 });
 
 let menuToggle = document.querySelector(".mobile-nav");
+let menuToggleLinks = document.querySelectorAll(".mobile-menu ul li a");
 let nav = document.querySelector(".mobile-menu");
 menuToggle.onclick = function() {
   menuToggle.classList.toggle("active");
   nav.classList.toggle("show");
 }
+
+menuToggleLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.toggle("active");
+    nav.classList.toggle("show");
+  })
+})
 
 </script>
 </body>
