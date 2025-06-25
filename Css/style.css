@@ -522,6 +522,10 @@ section#ecosystem div p {
     margin:1em auto;
 }
 
+section#ecosystem-mobile {
+    display: none;
+}
+
 section.why  {
     width: 100%;
     margin: auto ;
@@ -587,12 +591,6 @@ section.why .right div {
     padding: 2em 1.5em;
     height: 100%;
     transition: .5s;
-}
-
-section.why .right div h4,
-section.why .right div p,
-section.why .right div img {
- transform: translateZ(20px) !important; 
 }
 
 section.why .right div.card1 {
@@ -880,8 +878,9 @@ footer div p.title {
 footer ul {
  margin-top: 3.5em;
  display: flex;
- justify-content: space-around;
+ justify-content: center;
  width: 50%;
+ gap: 70px;
  align-items: center;
 }
 
@@ -892,7 +891,7 @@ footer ul li{
  font-weight: 300;
 }
 
-footer ul li.benefits{
+footer ul li:first-child{
  list-style-type: none;
 }
 
@@ -904,6 +903,33 @@ footer div.footer-bottom  {
     margin-top: 3.8em;
     border-top: 1px solid#555;
     padding-top: 2em;
+}
+
+footer div.footer-bottom div.right a{
+ text-decoration: none;
+    color: #cdcdcd;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+footer div.footer-bottom div.right a::after {
+ content: '';
+ display: block;
+ background: #fff;
+ height: 3px;
+ border-radius: 2px;
+ transform: scaleX(0);
+ transform-origin: left;
+ transition: transform 0.3s;
+}
+
+footer div.footer-bottom div.right a:hover {
+ text-shadow: 1px 1px 8px #fff; 
+}
+footer div.footer-bottom div.right a:hover::after {
+ color: #fff; 
+ transform-origin: right;
+ transform: scaleX(1);
 }
 
 footer div.footer-bottom div.center {
@@ -1542,7 +1568,7 @@ section.why .left {
 }
 
 section.why .left h3 {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 1em;
     width: 100%;
     text-align: center;
@@ -1563,13 +1589,6 @@ section.why .right {
     gap: 20px;
 }
 
-section.why .right div.card1 img.img-hover{
-top: -33px;
-}
-
-section.why .right div.card2 img.img-hover{
-    top: -33px;
-}
 
 section#testimonials h2 {
     font-size: 30px;
@@ -1636,7 +1655,7 @@ section.question img.bottom-left {
 
 footer p.title {
     font-size: 14px;
-    width: 50%;
+    width: 50% !important;
 }
 
 footer ul {
@@ -1809,6 +1828,10 @@ section#startup-form div#con form div.form-parent{
  gap: 20px;
 }
 
+section#faq p.title {
+ width: 50% !important;
+}
+
 }
 
 
@@ -1873,19 +1896,38 @@ width: 130%;
 }
 
 section#ecosystem {
+    display: none;
+}
+
+section#ecosystem-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 8em;
-    background: url("../Imgs/eco-mobile.png") no-repeat;
-    background-size: 100%;
-    padding-top: 7.5em;
-    padding-bottom: 6em;
+    margin-bottom: 8em;
 }
 
-section#ecosystem div h3 {
- font-size: 14px;
+section#ecosystem-mobile h3 {
+ font-size: 24px;
+ text-align: center;
+ width: 80%; 
+ margin:auto;
+ font-weight: 600;
 }
 
-section#ecosystem div p {
- font-size: 12px;
+section#ecosystem-mobile p {
+    font-size: 12px;
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    color: #cdcdcd;
+    margin-top: 2em;
+}
+
+section#ecosystem-mobile img {
+ width: 20%;
+ margin-top:4rem;
 }
 
 section.question {
@@ -2148,6 +2190,27 @@ section.question img.bottom-left {
     right: 42%;    
 }
 }
+}
+
+section#faq h2 {
+ font-size: 24px !important;
+}
+
+section#faq p.title {
+ width: 80% !important;
+ font-size: 14px !important;
+}
+
+section#whitepaper .content{
+ width: 80% !important;
+}
+
+section#privacy-policy .content{
+ width: 80% !important;
+}
+
+section#terms-of-service .content{
+ width: 80% !important;
 }
 
 }
@@ -2927,3 +2990,271 @@ section#startup-form div#con .form button.continue{
 section#startup-form div#con button.continue:hover {
     box-shadow: 1px 1px 8px #fff;
 }
+
+section#faq {
+    background: url("../Imgs/Ellipse\ f.png") no-repeat;
+    background-position-y: -70px;
+    background-position-x: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    /* margin-top: 3em; */
+    padding-top: 5em;
+}
+
+section#faq h2{
+ text-align: center;
+ font-size: 32px;
+ font-weight: 600;
+}
+
+section#faq p.title {
+ text-align: center;
+ margin: 1em auto 2em auto;
+ color: #cdcdcd;
+ width: 35%;
+ font-size: 16px;
+}
+
+section#faq .accordion{
+ max-width: 700px;
+ margin:0 auto;
+ padding: 2em;
+}
+
+section#faq .accordion .contentBx{
+    position: relative;
+    /* margin:10px 20px ; */
+    /* transition:all 0.5s; */
+    width: 100%;
+    padding: 1.2rem 0 1.2rem 2rem;
+    border: 1px solid #fff;
+    box-shadow: inset 1px 1px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    background-color: #0a0a0a;
+    cursor: pointer;
+    /* overflow: hidden; */
+}
+
+section#faq .accordion .contentBx:not(:last-child){
+ margin-bottom:.5rem;
+}
+
+section#faq .accordion .contentBx .label{
+position: relative;
+width: 100%;
+/* height: 100%; */
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+section#faq .accordion .contentBx .label img{
+ padding: 1rem;
+ position: absolute;
+ right: 0;
+}
+
+section#faq .accordion .contentBx .label img.arrow-down{
+ opacity: 0;
+}
+
+section#faq .accordion .contentBx .label p{
+ position: relative;
+ font-size: 1rem; 
+ font-weight: 500;
+ cursor: pointer;
+ text-align: left;
+ max-width: 70%;
+}
+
+
+section#faq .accordion .contentBx .content {
+ max-height: 0;
+ overflow: hidden;
+}
+
+
+section#faq .accordion .contentBx .content p{
+ width: 95%;
+ text-align: left;
+ font-size: .9rem;
+ font-weight: 200;
+}
+
+section#faq .accordion .contentBx.active .content{
+ margin-top: 2em;
+max-height: 100%;
+ transition: 0.5s ease;
+}
+
+section#faq .accordion .contentBx.active .arrow-right{
+ opacity: 0;
+}
+
+section#faq .accordion .contentBx.active .arrow-down{
+ opacity: 1  !important;
+}
+
+section#whitepaper {
+    margin-top: 5em;
+}
+
+section#whitepaper .hero {
+    padding-bottom: 5em;
+    border-bottom: 1px solid #c3c3c350;
+}
+
+section#whitepaper .hero h2{
+ text-align: center;
+ font-size: 2rem;
+ font-weight: 500;
+}
+
+section#whitepaper .content{
+ width: 50%;
+ margin: 2rem auto 2rem auto; 
+}
+
+section#whitepaper .content div{
+    margin-top: 5.5em;
+
+}
+
+section#whitepaper .content div h3{
+ margin-bottom: 1em;
+ font-weight: 600;
+ font-size: 24px;
+ text-transform: capitalize;
+}
+
+section#whitepaper .content div p{
+ color: #cdcdcd;
+ /* font-weight: 500; */
+ font-size: 14px;
+ line-height: 1.5;
+}
+
+section#whitepaper .content div ul li{
+ color: #cdcdcd;
+ font-size: 14px;
+ line-height: 1.5;
+}
+
+
+
+section#whitepaper a button {
+    font-weight: bold;
+  padding: 1em 2em;
+  border-radius: 32px;
+  border: none;
+  background-color: #fff;
+  font-family: inherit;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   text-align: center;
+   transition: .5s;
+   margin-top: 5em;
+}
+
+section#whitepaper a button:hover {
+    box-shadow: 1px 1px 8px #fff;
+}
+
+
+section#privacy-policy {
+    margin-top: 5em;
+}
+
+section#privacy-policy .hero {
+    padding-bottom: 5em;
+    border-bottom: 1px solid #c3c3c350;
+}
+
+section#privacy-policy .hero h2{
+ text-align: center;
+ font-size: 2rem;
+ font-weight: 500;
+}
+
+section#privacy-policy .content{
+ width: 50%;
+ margin: 2rem auto 2rem auto; 
+}
+
+section#privacy-policy .content div{
+    margin-top: 5.5em;
+
+}
+
+section#privacy-policy .content div h3{
+ margin-bottom: 1em;
+ font-weight: 600;
+ font-size: 24px;
+ text-transform: capitalize;
+}
+
+section#privacy-policy .content div p{
+ color: #cdcdcd;
+ /* font-weight: 500; */
+ font-size: 14px;
+ line-height: 1.5;
+}
+
+section#privacy-policy .content div ul li{
+ color: #cdcdcd;
+ font-size: 14px;
+ line-height: 1.5;
+}
+
+
+
+section#terms-of-service {
+    margin-top: 5em;
+}
+
+section#terms-of-service .hero {
+    padding-bottom: 5em;
+    border-bottom: 1px solid #c3c3c350;
+}
+
+section#terms-of-service .hero h2{
+ text-align: center;
+ font-size: 2rem;
+ font-weight: 500;
+}
+
+section#terms-of-service .content{
+ width: 50%;
+ margin: 2rem auto 2rem auto; 
+}
+
+section#terms-of-service .content div{
+    margin-top: 5.5em;
+
+}
+
+section#terms-of-service .content div h3{
+ margin-bottom: 1em;
+ font-weight: 600;
+ font-size: 24px;
+ text-transform: capitalize;
+}
+
+section#terms-of-service .content div p{
+ color: #cdcdcd;
+ /* font-weight: 500; */
+ font-size: 14px;
+ line-height: 1.5;
+}
+
+section#terms-of-service .content div ul li{
+ color: #cdcdcd;
+ font-size: 14px;
+ line-height: 1.5;
+}
+
