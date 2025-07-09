@@ -1742,7 +1742,7 @@ div.con section#team .cards div  {
    justify-content: center;
    align-items: center;
    flex-direction: column;
-
+   width: 100% !important;
 }
 
 div.con section#team .cards div img {
@@ -2424,6 +2424,7 @@ div.con section#team .cards div  {
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   width: 50%;
 
 }
 
