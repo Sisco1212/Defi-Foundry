@@ -56,7 +56,7 @@
 </div>
 
 <div class="form">
-<form action="">
+<form>
 <div class="form-parent">
 <div>
     <label for="name">Full Name*</label>
@@ -91,6 +91,7 @@
 <br>
 <textarea name="message" id="message" required></textarea>
 
+<p class="responseMessage"></p>
 <div class="buttons">
 <span></span>
 <button type="submit" class="continue">Continue</button>
@@ -166,6 +167,44 @@ menuToggleLinks.forEach(link => {
     nav.classList.toggle("show");
   })
 })
+
+const contactForm = document.querySelector('form').addEventListener('submit', 
+async function name(e) {
+  e.preventDefault();
+  const form = e.target;
+  
+  const data = {
+    name : form.name.value,
+    company : form.company.value,
+    email : form.email.value,
+    reason : form.reason.value,
+    message : form.message.value
+  };
+
+  
+  try {
+    
+    const response = await fetch("https://defi-foundry-backend-production.up.railway.app/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    document.querySelector(".responseMessage").textContent = result.message;
+    form.reset();
+
+  } catch (error) {
+    document.querySelector(".responseMessage").classList.add("error");
+    document.querySelector(".responseMessage").textContent = "An error occured. Please try again.";
+    console.error("Error:", error);
+  }
+
+
+});
+
 
 </script>
 </body>

@@ -3259,3 +3259,12 @@ section#terms-of-service .content div ul li{
  line-height: 1.5;
 }
 
+.responseMessage {
+    font-size: .9rem;
+    margin-top: 2em;
+    color: lightgreen;
+}
+
+.responseMessage.error {
+    color: coral;
+}
